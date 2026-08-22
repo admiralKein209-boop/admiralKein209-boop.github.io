@@ -555,33 +555,118 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
-        /* --- АДАПТИВНОСТЬ --- */
+        /* --- АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ (ИСПРАВЛЕННАЯ) --- */
         @media (max-width: 768px) {
+            /* Шапка */
             .header-content {
                 flex-direction: column;
                 align-items: stretch;
+                gap: 10px;
+                padding: 10px 0;
             }
-            .search-bar {
-                max-width: 100%;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero .stats {
-                gap: 20px;
-            }
-            .hero .stat-item strong {
-                font-size: 1.5rem;
-            }
-            .section-title {
-                font-size: 1.6rem;
+            
+            /* Логотип по центру */
+            .logo {
+                justify-content: center;
+                margin-bottom: 5px;
             }
             .logo-text {
                 font-size: 20px;
             }
+            .logo-slogan {
+                font-size: 10px;
+            }
+            
+            /* Поиск на всю ширину */
+            .search-bar {
+                max-width: 100%;
+                order: 3;
+            }
+            .search-bar input {
+                font-size: 14px;
+                padding: 10px 14px;
+            }
+            .search-bar button {
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+            
+            /* Кнопки "Войти", "Сравнить" и т.д. */
             .user-actions {
                 justify-content: center;
+                gap: 12px;
                 flex-wrap: wrap;
+                order: 2;
+                margin: 5px 0;
+            }
+            .user-actions a {
+                font-size: 14px;
+                padding: 4px 0;
+            }
+
+            /* Остальные элементы сайта */
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+            .hero .stats {
+                gap: 15px;
+            }
+            .hero .stat-item strong {
+                font-size: 1.3rem;
+            }
+            .section-title {
+                font-size: 1.4rem;
+                margin: 30px 0 20px;
+            }
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            .category-card {
+                padding: 15px 10px;
+            }
+            .category-card .icon {
+                font-size: 2rem;
+            }
+            .category-card h3 {
+                font-size: 0.95rem;
+            }
+            .category-card p {
+                font-size: 0.8rem;
+            }
+            .products-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+            .product-card {
+                padding: 15px;
+            }
+            .product-card h4 {
+                font-size: 1rem;
+            }
+            .product-card .price {
+                font-size: 1.1rem;
+            }
+            .product-card .buy-btn {
+                font-size: 12px;
+                padding: 6px 14px;
+            }
+            .reviews-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .articles-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                text-align: center;
             }
         }
     </style>
@@ -615,7 +700,7 @@
     <!-- ======= ОСНОВНОЙ КОНТЕНТ ======= -->
     <main class="container">
 
-        <!-- БАННЕР (НОВЫЙ, с исправленными цифрами и текстом) -->
+        <!-- БАННЕР -->
         <section class="hero">
             <h1>Молодая команда <span class="highlight">СтройСтарт</span></h1>
             <p>
@@ -963,6 +1048,7 @@
 
         console.log('🚀 Сайт СтройСтарт успешно загружен!');
         console.log('📊 Статистика: 150+ магазинов, 15 000+ товаров, 45 регионов');
+        console.log('📱 Адаптация для телефонов включена!');
     </script>
 
 </body>

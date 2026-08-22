@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ВашСтройКаталог - Лучшие предложения стройматериалов</title>
+    <!-- Подключаем шрифты для красивого отображения -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        /* --- ОБЩИЕ СТИЛИ --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f7fa;
+            color: #1a202c;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- ШАПКА (ХЕДЕР) --- */
+        .header {
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 32px;
+            background: #2b6cb0;
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a202c;
+        }
+        .logo-text span {
+            color: #2b6cb0;
+        }
+
+        .search-bar {
+            display: flex;
+            flex: 1 1 400px;
+            max-width: 500px;
+        }
+        .search-bar input {
+            flex: 1;
+            padding: 12px 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 30px 0 0 30px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+        .search-bar input:focus {
+            border-color: #2b6cb0;
+        }
+        .search-bar button {
+            padding: 12px 24px;
+            background: #2b6cb0;
+            color: white;
+            border: none;
+            border-radius: 0 30px 30px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .search-bar button:hover {
+            background: #1a4f7a;
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 20px;
+            font-weight: 500;
+        }
+        .user-actions a {
+            color: #4a5568;
+            text-decoration: none;
+        }
+        .user-actions a:hover {
+            color: #2b6cb0;
+        }
+
+        /* --- ГЛАВНЫЙ БАННЕР --- */
+        .hero {
+            background: linear-gradient(135deg, #2b6cb0 0%, #1a365d 100%);
+            color: white;
+            padding: 60px 0;
+            border-radius: 24px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .hero .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .hero .stat-item {
+            font-size: 1.1rem;
+        }
+        .hero .stat-item strong {
+            font-size: 2rem;
+            display: block;
+        }
+
+        /* --- КАТЕГОРИИ --- */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 50px 0 30px;
+            text-align: center;
+        }
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+        .category-card {
+            background: white;
+            padding: 25px 15px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            cursor: pointer;
+            border: 1px solid #edf2f7;
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(43, 108, 176, 0.15);
+            border-color: #2b6cb0;
+        }
+        .category-card .icon {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+        .category-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        .category-card p {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+
+        /* --- ТОВАРЫ НЕДЕЛИ --- */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #edf2f7;
+            transition: 0.3s;
+        }
+        .product-card:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .product-card .badge {
+            background: #e53e3e;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .product-card .badge.new {
+            background: #38a169;
+        }
+        .product-card .badge.top {
+            background: #d69e2e;
+        }
+        .product-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        .product-card .price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2b6cb0;
+            margin: 12px 0;
+        }
+        .product-card .old-price {
+            text-decoration: line-through;
+            color: #a0aec0;
+            font-size: 1rem;
+            margin-left: 10px;
+            font-weight: 400;
+        }
+        .product-card .desc {
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        /* --- ОТЗЫВЫ --- */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .review-card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid #edf2f7;
+        }
+        .review-card .stars {
+            color: #d69e2e;
+            letter-spacing: 2px;
+            font-size: 1.2rem;
+        }
+        .review-card .name {
+            font-weight: 600;
+            margin: 10px 0 5px;
+        }
+        .review-card .date {
+            color: #a0aec0;
+            font-size: 0.85rem;
+        }
+        .review-card .text {
+            color: #4a5568;
+            margin-top: 10px;
+        }
+
+        /* --- СТАТЬИ --- */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        .article-card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid #edf2f7;
+        }
+        .article-card .tag {
+            color: #2b6cb0;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        .article-card h4 {
+            margin: 10px 0;
+        }
+        .article-card p {
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        /* --- FAQ --- */
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #edf2f7;
+        }
+        .faq-item summary {
+            padding: 18px 25px;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: #2b6cb0;
+        }
+        .faq-item[open] summary::after {
+            content: "−";
+        }
+        .faq-item .answer {
+            padding: 0 25px 25px;
+            color: #4a5568;
+        }
+
+        /* --- ПОДВАЛ --- */
+        .footer {
+            background: #1a202c;
+            color: #cbd5e0;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        .footer h4 {
+            color: white;
+            margin-bottom: 15px;
+        }
+        .footer a {
+            color: #a0aec0;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .footer a:hover {
+            color: white;
+        }
+        .footer .copy {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #2d3748;
+        }
+
+        /* --- АДАПТИВНОСТЬ --- */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-bar {
+                max-width: 100%;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero .stats {
+                gap: 20px;
+            }
+            .hero .stat-item strong {
+                font-size: 1.5rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ======= ШАПКА САЙТА ======= -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <div class="logo-icon">🏗️</div>
+                <div class="logo-text">Ваш<span>Строй</span>Каталог</div>
+            </a>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Поиск стройматериалов...">
+                <button>Найти</button>
+            </div>
+
+            <div class="user-actions">
+                <a href="#">📋 Сравнить</a>
+                <a href="#">❤️ Избранное</a>
+                <a href="#">👤 Войти</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======= ОСНОВНОЙ КОНТЕНТ ======= -->
+    <main class="container">
+
+        <!-- БАННЕР -->
+        <section class="hero">
+            <h1>Крупнейший обзор стройматериалов</h1>
+            <p>Сравните цены в 2500+ магазинах и найдите лучшее предложение в вашем городе</p>
+            <div class="stats">
+                <div class="stat-item"><strong>2,500+</strong> Магазинов</div>
+                <div class="stat-item"><strong>150,000+</strong> Товаров</div>
+                <div class="stat-item"><strong>89</strong> Регионов</div>
+                <div class="stat-item"><strong>4.8</strong> Средний рейтинг</div>
+            </div>
+        </section>
+
+        <!-- КАТЕГОРИИ -->
+        <h2 class="section-title">Популярные категории</h2>
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="icon">🧱</div>
+                <h3>Кирпич и блоки</h3>
+                <p>Керамика, газоблоки, пеноблоки</p>
+            </div>
+            <div class="category-card">
+                <div class="icon">🪵</div>
+                <h3>Пиломатериалы</h3>
+                <p>Доска, брус, фанера, OSB</p>
+            </div>
+            <div class="category-card">
+                <div class="icon">🎨</div>
+                <h3>Отделочные материалы</h3>
+                <p>Краски, обои, плитка, штукатурка</p>
+            </div>
+            <div class="category-card">
+                <div class="icon">🔧</div>
+                <h3>Инструменты</h3>
+                <p>Электро- и ручной инструмент</p>
+            </div>
+            <div class="category-card">
+                <div class="icon">💧</div>
+                <h3>Сантехника</h3>
+                <p>Смесители, ванны, трубы</p>
+            </div>
+            <div class="category-card">
+                <div class="icon">⚡</div>
+                <h3>Электротовары</h3>
+                <p>Кабели, автоматы, розетки</p>
+            </div>
+            <div class="category-card">
+                <div class="icon">🏠</div>
+                <h3>Кровля и фасады</h3>
+                <p>Металлочерепица, сайдинг, утеплитель</p>
+            </div>
+            <div class="category-card">
+                <div class="icon">🌡️</div>
+                <h3>Отопление</h3>
+                <p>Радиаторы, котлы, трубы</p>
+            </div>
+        </div>
+
+        <!-- ТОВАРЫ НЕДЕЛИ -->
+        <h2 class="section-title">🔥 Популярные товары недели</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <span class="badge">ХИТ</span>
+                <h4>Кирпич керамический рядовой</h4>
+                <p class="desc">М-125, полнотелый, 250×120×65 мм</p>
+                <div class="price">23 ₽/шт <span class="old-price">31 ₽</span></div>
+            </div>
+            <div class="product-card">
+                <span class="badge">-25%</span>
+                <h4>Доска обрезная сосна</h4>
+                <p class="desc">40×150×6000 мм, сорт AB</p>
+                <div class="price">1 450 ₽/шт <span class="old-price">1 930 ₽</span></div>
+            </div>
+            <div class="product-card">
+                <span class="badge new">NEW</span>
+                <h4>Дрель-шуруповерт Bosch</h4>
+                <p class="desc">18V, 2 АКБ, кейс, зарядное</p>
+                <div class="price">8 990 ₽</div>
+            </div>
+            <div class="product-card">
+                <span class="badge top">ТОП</span>
+                <h4>Кабель ВВГ 3×2.5</h4>
+                <p class="desc">ГОСТ, медный, 100 метров</p>
+                <div class="price">2 150 ₽</div>
+            </div>
+        </div>
+
+        <!-- ОТЗЫВЫ -->
+        <h2 class="section-title">⭐ Отзывы покупателей</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <div class="name">Алексей Смирнов</div>
+                <div class="date">15 января 2026</div>
+                <div class="text">«Отличный сервис! Нашел нужный кирпич по самой выгодной цене. Сэкономил почти 25 тысяч рублей.»</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <div class="name">Мария Петрова</div>
+                <div class="date">12 января 2026</div>
+                <div class="text">«Через каталог нашли все материалы для ремонта. Удобные фильтры, актуальные цены. Рекомендую!»</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★☆</div>
+                <div class="name">Дмитрий Кузнецов</div>
+                <div class="date">8 января 2026</div>
+                <div class="text">«Пользуюсь для стройбригады. Удобно находить лучшие предложения для клиентов. Информация актуальная.»</div>
+            </div>
+        </div>
+
+        <!-- СТАТЬИ -->
+        <h2 class="section-title">📚 Полезные статьи</h2>
+        <div class="articles-grid">
+            <div class="article-card">
+                <div class="tag">Руководства</div>
+                <h4>Как выбрать качественный кирпич 2026</h4>
+                <p>Разбираем виды, марки прочности, морозостойкость и другие характеристики...</p>
+            </div>
+            <div class="article-card">
+                <div class="tag">Советы</div>
+                <h4>10 способов сэкономить на стройматериалах</h4>
+                <p>Проверенные методы экономии при закупке материалов для стройки и ремонта...</p>
+            </div>
+            <div class="article-card">
+                <div class="tag">Обзоры</div>
+                <h4>Топ-15 инструментов для домашнего мастера</h4>
+                <p>Какие инструменты обязательно должны быть в арсенале каждого мастера...</p>
+            </div>
+        </div>
+
+        <!-- ВОПРОСЫ-ОТВЕТЫ (FAQ) -->
+        <h2 class="section-title">❓ Частые вопросы</h2>
+        <div class="faq">
+            <details class="faq-item">
+                <summary>Как работает ВашСтройКаталог?</summary>
+                <div class="answer">Мы собираем и систематизируем информацию о магазинах стройматериалов по всей России. Вы быстро находите лучшие предложения в вашем регионе.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Можно ли купить товары напрямую через сайт?</summary>
+                <div class="answer">Нет, мы являемся обзорным сервисом. Помогаем найти лучшее предложение, а покупка осуществляется напрямую в магазинах-партнерах.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Насколько актуальны цены в каталоге?</summary>
+                <div class="answer">Мы обновляем информацию ежедневно. Рекомендуем уточнять финальную стоимость в магазине перед покупкой.</div>
+            </details>
+        </div>
+
+    </main>
+
+    <!-- ======= ПОДВАЛ (ФУТЕР) ======= -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <h4>ВашСтройКаталог</h4>
+                <a href="#">О нас</a>
+                <a href="#">Контакты</a>
+                <a href="#">Для магазинов</a>
+                <a href="#">Пользовательское соглашение</a>
+            </div>
+            <div>
+                <h4>Помощь</h4>
+                <a href="#">Как пользоваться</a>
+                <a href="#">Вопросы и ответы</a>
+                <a href="#">Поддержка</a>
+            </div>
+            <div>
+                <h4>Контакты</h4>
+                <a href="#">📧 info@stroikatalog.ru</a>
+                <a href="#">📞 8 (800) 555-35-35</a>
+                <a href="#">📍 Москва, ул. Строителей, д. 1</a>
+            </div>
+        </div>
+        <div class="container copy">
+            <p>© 2026 ВашСтройКаталог. Все права защищены. Только для ознакомления.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

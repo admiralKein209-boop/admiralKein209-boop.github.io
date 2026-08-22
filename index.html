@@ -121,6 +121,7 @@
             gap: 20px;
             font-weight: 500;
             align-items: center;
+            flex-wrap: wrap;
         }
         .user-actions a {
             color: #cbd5e1;
@@ -132,7 +133,7 @@
             color: #facc15;
         }
 
-        /* --- ГЕРОЙ --- */
+        /* --- ГЕРОЙ (БАННЕР) --- */
         .hero {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
@@ -176,6 +177,8 @@
             font-size: 0.8rem;
             opacity: 0.7;
             font-weight: 300;
+            display: block;
+            margin-top: 2px;
         }
 
         /* --- КАТЕГОРИИ --- */
@@ -436,7 +439,7 @@
             font-size: 0.9rem;
         }
 
-        /* ======= МОДАЛЬНЫЕ ОКНА (Вход / Регистрация) ======= */
+        /* ======= МОДАЛЬНЫЕ ОКНА ======= */
         .modal {
             display: none;
             position: fixed;
@@ -602,8 +605,8 @@
             </div>
 
             <div class="user-actions">
-                <a href="#" onclick="showModal('compare')">📋 Сравнить</a>
-                <a href="#" onclick="showModal('favorites')">❤️ Избранное</a>
+                <a href="#" onclick="showInfoModal('Сравнение товаров', 'Здесь вы можете сравнить цены и характеристики товаров из разных магазинов. Функция в разработке, скоро появится!')">📋 Сравнить</a>
+                <a href="#" onclick="showInfoModal('Избранное', 'Сохраняйте понравившиеся товары в избранное, чтобы не потерять их. Скоро здесь появится ваш список!')">❤️ Избранное</a>
                 <a href="#" onclick="openModal('loginModal')">👤 Войти</a>
             </div>
         </div>
@@ -612,15 +615,19 @@
     <!-- ======= ОСНОВНОЙ КОНТЕНТ ======= -->
     <main class="container">
 
-        <!-- БАННЕР -->
+        <!-- БАННЕР (НОВЫЙ, с исправленными цифрами и текстом) -->
         <section class="hero">
             <h1>Молодая команда <span class="highlight">СтройСтарт</span></h1>
-            <p>Мы только начинаем свой путь, но уже помогаем находить лучшие предложения на стройматериалы. Присоединяйтесь к нам!</p>
+            <p>
+                Мы — дружная команда энтузиастов, которая только начинает свой путь. 
+                Наша цель — помочь вам найти лучшие предложения на стройматериалы. 
+                Присоединяйтесь к нам, вместе мы строим будущее!
+            </p>
             <div class="stats">
                 <div class="stat-item">
-                    <strong>120+</strong>
+                    <strong>150+</strong>
                     Магазинов-партнеров
-                    <span class="small-note">и мы растём!</span>
+                    <span class="small-note">и мы растем каждый день!</span>
                 </div>
                 <div class="stat-item">
                     <strong>15 000+</strong>
@@ -643,42 +650,42 @@
         <!-- КАТЕГОРИИ -->
         <h2 class="section-title">Популярные категории</h2>
         <div class="categories-grid">
-            <a href="#" class="category-card" onclick="showModal('category')">
+            <a href="#" class="category-card" onclick="showInfoModal('Кирпич и блоки', 'В этой категории представлены: керамический кирпич, силикатный кирпич, газоблоки, пеноблоки, шлакоблоки. Скоро добавим подробные описания и цены!')">
                 <div class="icon">🧱</div>
                 <h3>Кирпич и блоки</h3>
                 <p>Керамика, газоблоки, пеноблоки</p>
             </a>
-            <a href="#" class="category-card" onclick="showModal('category')">
+            <a href="#" class="category-card" onclick="showInfoModal('Пиломатериалы', 'В этой категории: доска обрезная, брус, вагонка, фанера, OSB, ДСП различных сортов. Подробнее скоро!')">
                 <div class="icon">🪵</div>
                 <h3>Пиломатериалы</h3>
                 <p>Доска, брус, фанера, OSB</p>
             </a>
-            <a href="#" class="category-card" onclick="showModal('category')">
+            <a href="#" class="category-card" onclick="showInfoModal('Отделочные материалы', 'Краски, лаки, обои, декоративная штукатурка, напольные покрытия, плитка — всё для отделки вашего дома.')">
                 <div class="icon">🎨</div>
                 <h3>Отделочные материалы</h3>
                 <p>Краски, обои, плитка, штукатурка</p>
             </a>
-            <a href="#" class="category-card" onclick="showModal('category')">
+            <a href="#" class="category-card" onclick="showInfoModal('Инструменты', 'Электроинструмент, ручной инструмент, измерительные приборы, расходные материалы для любых задач.')">
                 <div class="icon">🔧</div>
                 <h3>Инструменты</h3>
                 <p>Электро- и ручной инструмент</p>
             </a>
-            <a href="#" class="category-card" onclick="showModal('category')">
+            <a href="#" class="category-card" onclick="showInfoModal('Сантехника', 'Смесители, ванны, душевые кабины, унитазы, раковины, трубы, фитинги — выбирайте лучшее!')">
                 <div class="icon">💧</div>
                 <h3>Сантехника</h3>
                 <p>Смесители, ванны, трубы</p>
             </a>
-            <a href="#" class="category-card" onclick="showModal('category')">
+            <a href="#" class="category-card" onclick="showInfoModal('Электротовары', 'Кабели, провода, автоматы, УЗО, розетки, выключатели, светильники для вашего дома.')">
                 <div class="icon">⚡</div>
                 <h3>Электротовары</h3>
                 <p>Кабели, автоматы, розетки</p>
             </a>
-            <a href="#" class="category-card" onclick="showModal('category')">
+            <a href="#" class="category-card" onclick="showInfoModal('Кровля и фасады', 'Металлочерепица, профнастил, сайдинг, водосточные системы, утеплители для надежной защиты.')">
                 <div class="icon">🏠</div>
                 <h3>Кровля и фасады</h3>
                 <p>Металлочерепица, сайдинг, утеплитель</p>
             </a>
-            <a href="#" class="category-card" onclick="showModal('category')">
+            <a href="#" class="category-card" onclick="showInfoModal('Отопление', 'Радиаторы, котлы, трубы для отопления, терморегуляторы, насосы — тепло в вашем доме.')">
                 <div class="icon">🌡️</div>
                 <h3>Отопление</h3>
                 <p>Радиаторы, котлы, трубы</p>
@@ -688,33 +695,33 @@
         <!-- ТОВАРЫ НЕДЕЛИ -->
         <h2 class="section-title">🔥 Популярные товары недели</h2>
         <div class="products-grid">
-            <div class="product-card" onclick="showModal('product')">
+            <div class="product-card" onclick="showInfoModal('Кирпич керамический рядовой', 'М-125, полнотелый, 250×120×65 мм. Отличный выбор для строительства. Цена: 23 ₽/шт.')">
                 <span class="badge">ХИТ</span>
                 <h4>Кирпич керамический рядовой</h4>
                 <p class="desc">М-125, полнотелый, 250×120×65 мм</p>
                 <div class="price">23 ₽/шт <span class="old-price">31 ₽</span></div>
-                <button class="buy-btn" onclick="event.stopPropagation(); showModal('buy')">Купить</button>
+                <button class="buy-btn" onclick="event.stopPropagation(); showInfoModal('Покупка', 'Для оформления заказа перейдите в корзину. Функция оплаты скоро появится!')">Купить</button>
             </div>
-            <div class="product-card" onclick="showModal('product')">
+            <div class="product-card" onclick="showInfoModal('Доска обрезная сосна', '40×150×6000 мм, сорт AB. Идеально для строительных работ. Цена: 1 450 ₽/шт.')">
                 <span class="badge">-25%</span>
                 <h4>Доска обрезная сосна</h4>
                 <p class="desc">40×150×6000 мм, сорт AB</p>
                 <div class="price">1 450 ₽/шт <span class="old-price">1 930 ₽</span></div>
-                <button class="buy-btn" onclick="event.stopPropagation(); showModal('buy')">Купить</button>
+                <button class="buy-btn" onclick="event.stopPropagation(); showInfoModal('Покупка', 'Для оформления заказа перейдите в корзину. Функция оплаты скоро появится!')">Купить</button>
             </div>
-            <div class="product-card" onclick="showModal('product')">
+            <div class="product-card" onclick="showInfoModal('Дрель-шуруповерт Bosch', '18V, 2 АКБ, кейс, зарядное устройство. Профессиональный инструмент. Цена: 8 990 ₽.')">
                 <span class="badge new">NEW</span>
                 <h4>Дрель-шуруповерт Bosch</h4>
                 <p class="desc">18V, 2 АКБ, кейс, зарядное</p>
                 <div class="price">8 990 ₽</div>
-                <button class="buy-btn" onclick="event.stopPropagation(); showModal('buy')">Купить</button>
+                <button class="buy-btn" onclick="event.stopPropagation(); showInfoModal('Покупка', 'Для оформления заказа перейдите в корзину. Функция оплаты скоро появится!')">Купить</button>
             </div>
-            <div class="product-card" onclick="showModal('product')">
+            <div class="product-card" onclick="showInfoModal('Кабель ВВГ 3×2.5', 'ГОСТ, медный, 100 метров. Надежный кабель для проводки. Цена: 2 150 ₽.')">
                 <span class="badge top">ТОП</span>
                 <h4>Кабель ВВГ 3×2.5</h4>
                 <p class="desc">ГОСТ, медный, 100 метров</p>
                 <div class="price">2 150 ₽</div>
-                <button class="buy-btn" onclick="event.stopPropagation(); showModal('buy')">Купить</button>
+                <button class="buy-btn" onclick="event.stopPropagation(); showInfoModal('Покупка', 'Для оформления заказа перейдите в корзину. Функция оплаты скоро появится!')">Купить</button>
             </div>
         </div>
 
@@ -744,17 +751,17 @@
         <!-- СТАТЬИ -->
         <h2 class="section-title">📚 Полезные статьи для начинающих</h2>
         <div class="articles-grid">
-            <a href="#" class="article-card" onclick="showModal('article')">
+            <a href="#" class="article-card" onclick="showInfoModal('Как выбрать качественный кирпич', 'Разбираем виды кирпича, марки прочности, морозостойкость и на что обратить внимание новичку. Полное руководство скоро появится!')">
                 <div class="tag">Руководства</div>
                 <h4>Как выбрать качественный кирпич</h4>
                 <p>Разбираем виды, марки прочности и на что обратить внимание новичку...</p>
             </a>
-            <a href="#" class="article-card" onclick="showModal('article')">
+            <a href="#" class="article-card" onclick="showInfoModal('5 способов сэкономить на стройматериалах', 'Проверенные лайфхаки для тех, кто строит впервые и хочет уложиться в бюджет. Читайте наши советы!')">
                 <div class="tag">Советы</div>
                 <h4>5 способов сэкономить на стройматериалах</h4>
                 <p>Проверенные лайфхаки для тех, кто строит впервые и хочет уложиться в бюджет...</p>
             </a>
-            <a href="#" class="article-card" onclick="showModal('article')">
+            <a href="#" class="article-card" onclick="showInfoModal('Топ-10 инструментов для дома', 'Что обязательно должно быть в арсенале начинающего мастера. Список с ценами и рекомендациями.')">
                 <div class="tag">Обзоры</div>
                 <h4>Топ-10 инструментов для дома</h4>
                 <p>Что обязательно должно быть в арсенале начинающего мастера...</p>
@@ -776,6 +783,10 @@
                 <summary>Как часто обновляются цены?</summary>
                 <div class="answer">Мы стараемся обновлять информацию ежедневно. Но рекомендуем уточнять стоимость напрямую в магазине перед покупкой.</div>
             </details>
+            <details class="faq-item">
+                <summary>Как добавить свой магазин в каталог?</summary>
+                <div class="answer">Если вы представитель магазина стройматериалов и хотите разместить информацию в нашем каталоге, свяжитесь с нами через форму обратной связи. Размещение базовой информации бесплатно.</div>
+            </details>
         </div>
 
     </main>
@@ -785,22 +796,22 @@
         <div class="container footer-content">
             <div>
                 <h4>СтройСтарт</h4>
-                <a href="#" onclick="showModal('about')">О нас</a>
-                <a href="#" onclick="showModal('contacts')">Контакты</a>
-                <a href="#" onclick="showModal('partners')">Для магазинов</a>
-                <a href="#" onclick="showModal('agreement')">Пользовательское соглашение</a>
+                <a href="#" onclick="showInfoModal('О нас', 'Мы — молодая команда энтузиастов, создающая лучший каталог стройматериалов. Наша цель — сделать строительство доступным и понятным для каждого!')">О нас</a>
+                <a href="#" onclick="showInfoModal('Контакты', 'Свяжитесь с нами: 📧 info@stroystart.ru, 📞 8 (800) 555-35-35. Мы всегда на связи!')">Контакты</a>
+                <a href="#" onclick="showInfoModal('Для магазинов', 'Хотите добавить свой магазин в каталог? Напишите нам на partners@stroystart.ru. Размещение бесплатно!')">Для магазинов</a>
+                <a href="#" onclick="showInfoModal('Пользовательское соглашение', 'Используя наш сайт, вы соглашаетесь с условиями обработки данных. Подробнее в документе, который появится скоро.')">Пользовательское соглашение</a>
             </div>
             <div>
                 <h4>Помощь</h4>
-                <a href="#" onclick="showModal('help')">Как пользоваться</a>
+                <a href="#" onclick="showInfoModal('Как пользоваться', 'Просто введите название товара в поиск или выберите категорию. Сравнивайте цены и переходите в магазины-партнеры.')">Как пользоваться</a>
                 <a href="#" onclick="document.querySelector('.faq').scrollIntoView({behavior: 'smooth'})">Вопросы и ответы</a>
-                <a href="#" onclick="showModal('support')">Поддержка</a>
+                <a href="#" onclick="showInfoModal('Поддержка', 'Если у вас возникли вопросы или проблемы, напишите нам на support@stroystart.ru. Мы ответим в течение 24 часов.')">Поддержка</a>
             </div>
             <div>
                 <h4>Контакты</h4>
                 <a href="mailto:info@stroystart.ru">📧 info@stroystart.ru</a>
                 <a href="tel:+78005553535">📞 8 (800) 555-35-35</a>
-                <a href="#" onclick="showModal('address')">📍 Москва, ул. Строителей, д. 1</a>
+                <a href="#" onclick="showInfoModal('Адрес', '📍 Москва, ул. Строителей, д. 1. Офис открыт для партнеров по предварительной записи.')">📍 Москва, ул. Строителей, д. 1</a>
             </div>
         </div>
         <div class="container copy">
@@ -885,9 +896,74 @@
             openModal(to);
         }
 
+        // ======= УНИВЕРСАЛЬНОЕ ОКНО ДЛЯ ИНФОРМАЦИИ =======
+        function showInfoModal(title, text) {
+            document.getElementById('infoModalTitle').textContent = title;
+            document.getElementById('infoModalText').textContent = text;
+            openModal('infoModal');
+        }
+
         // ======= ОБРАБОТЧИКИ ФОРМ =======
         function handleLogin() {
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
             if (email && password) {
-                alert(`✅ Добро пожал
+                alert('✅ Добро пожаловать! Вы успешно вошли в аккаунт.');
+                closeModal('loginModal');
+                document.getElementById('loginEmail').value = '';
+                document.getElementById('loginPassword').value = '';
+            } else {
+                alert('⚠️ Пожалуйста, заполните все поля.');
+            }
+        }
+
+        function handleRegister() {
+            const name = document.getElementById('registerName').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            if (name && email && password.length >= 6) {
+                alert('🎉 Регистрация прошла успешно! Добро пожаловать в СтройСтарт!');
+                closeModal('registerModal');
+                document.getElementById('registerName').value = '';
+                document.getElementById('registerEmail').value = '';
+                document.getElementById('registerPassword').value = '';
+            } else if (password.length < 6) {
+                alert('⚠️ Пароль должен содержать не менее 6 символов.');
+            } else {
+                alert('⚠️ Пожалуйста, заполните все поля.');
+            }
+        }
+
+        // ======= ПОИСК =======
+        function searchProducts() {
+            const query = document.getElementById('searchInput').value.trim();
+            if (query) {
+                showInfoModal('Результаты поиска', `По запросу "${query}" найдено 3 товара. Мы добавим полноценный поиск в ближайшее время!`);
+            } else {
+                alert('⚠️ Введите запрос для поиска.');
+            }
+        }
+
+        // ======= ЗАКРЫТИЕ МОДАЛЬНЫХ ОКОН ПО КЛИКУ НА ФОН =======
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // ======= ОБРАБОТКА КНОПКИ ENTER ДЛЯ ПОИСКА =======
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchProducts();
+            }
+        });
+
+        console.log('🚀 Сайт СтройСтарт успешно загружен!');
+        console.log('📊 Статистика: 150+ магазинов, 15 000+ товаров, 45 регионов');
+    </script>
+
+</body>
+</html>

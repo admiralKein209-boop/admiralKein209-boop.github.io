@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>СтройСтарт - Молодой каталог стройматериалов</title>
+    <title>СтройСтарт - Строительный портал</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
@@ -26,45 +26,46 @@
             padding: 0 20px;
         }
 
-        /* --- ШАПКА --- */
+        /* --- ШАПКА (НОРМАЛЬНАЯ НА ВСЕХ УСТРОЙСТВАХ) --- */
         .header {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
-            padding: 16px 0;
+            padding: 12px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
         }
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             text-decoration: none;
             cursor: pointer;
+            flex-shrink: 0;
         }
         .logo-icon {
-            font-size: 28px;
+            font-size: 24px;
             background: #facc15;
             color: #0f172a;
-            width: 48px;
-            height: 48px;
-            border-radius: 14px;
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            box-shadow: 0 4px 10px rgba(250, 204, 21, 0.3);
+            box-shadow: 0 3px 8px rgba(250, 204, 21, 0.25);
         }
         .logo-text {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 700;
             color: white;
         }
@@ -72,45 +73,51 @@
             color: #facc15;
         }
         .logo-slogan {
-            font-size: 12px;
+            font-size: 11px;
             opacity: 0.8;
             font-weight: 300;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             display: block;
-            margin-top: -2px;
+            margin-top: -1px;
         }
         .search-bar {
             display: flex;
-            flex: 1 1 400px;
-            max-width: 500px;
+            flex: 1 1 280px;
+            max-width: 420px;
+            min-width: 160px;
         }
         .search-bar input {
             flex: 1;
-            padding: 12px 18px;
+            padding: 8px 14px;
             border: 2px solid #334155;
-            border-radius: 30px 0 0 30px;
-            font-size: 16px;
+            border-radius: 20px 0 0 20px;
+            font-size: 14px;
             outline: none;
             background: #1e293b;
             color: white;
             transition: 0.3s;
+            height: 38px;
         }
         .search-bar input::placeholder {
             color: #94a3b8;
+            font-size: 13px;
         }
         .search-bar input:focus {
             border-color: #facc15;
             background: #0f172a;
         }
         .search-bar button {
-            padding: 12px 24px;
+            padding: 8px 16px;
             background: #facc15;
             color: #0f172a;
             border: none;
-            border-radius: 0 30px 30px 0;
+            border-radius: 0 20px 20px 0;
             font-weight: 700;
+            font-size: 13px;
             cursor: pointer;
             transition: 0.3s;
+            height: 38px;
+            white-space: nowrap;
         }
         .search-bar button:hover {
             background: #eab308;
@@ -118,16 +125,19 @@
         }
         .user-actions {
             display: flex;
-            gap: 20px;
+            gap: 12px;
             font-weight: 500;
             align-items: center;
             flex-wrap: wrap;
+            flex-shrink: 0;
         }
         .user-actions a {
             color: #cbd5e1;
             text-decoration: none;
             transition: 0.3s;
             cursor: pointer;
+            font-size: 13px;
+            padding: 4px 8px;
         }
         .user-actions a:hover {
             color: #facc15;
@@ -137,44 +147,45 @@
         .hero {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
-            padding: 60px 0;
-            border-radius: 24px;
-            margin: 30px 0;
+            padding: 40px 0 45px;
+            border-radius: 20px;
+            margin: 20px 0 30px;
             text-align: center;
             border: 1px solid #334155;
         }
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         .hero .highlight {
             color: #facc15;
         }
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             opacity: 0.9;
             max-width: 650px;
-            margin: 0 auto 30px;
+            margin: 0 auto 25px;
+            line-height: 1.7;
         }
         .hero .stats {
             display: flex;
             justify-content: center;
-            gap: 50px;
+            gap: 30px;
             flex-wrap: wrap;
         }
         .hero .stat-item {
-            font-size: 1.1rem;
+            font-size: 1rem;
             opacity: 0.9;
         }
         .hero .stat-item strong {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             display: block;
             color: #facc15;
             font-weight: 700;
         }
         .hero .stat-item .small-note {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             opacity: 0.7;
             font-weight: 300;
             display: block;
@@ -183,22 +194,22 @@
 
         /* --- КАТЕГОРИИ --- */
         .section-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            margin: 50px 0 30px;
+            margin: 40px 0 25px;
             text-align: center;
         }
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 20px;
         }
         .category-card {
             background: white;
-            padding: 25px 15px;
-            border-radius: 16px;
+            padding: 20px 12px;
+            border-radius: 14px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
             transition: 0.3s;
             cursor: pointer;
             border: 1px solid #edf2f7;
@@ -207,52 +218,52 @@
             display: block;
         }
         .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(250, 204, 21, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(250, 204, 21, 0.15);
             border-color: #facc15;
         }
         .category-card .icon {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-        }
-        .category-card h3 {
-            font-size: 1.1rem;
+            font-size: 2.2rem;
             margin-bottom: 8px;
         }
+        .category-card h3 {
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
         .category-card p {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #718096;
         }
 
         /* --- ТОВАРЫ --- */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
         }
         .product-card {
             background: white;
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: 14px;
+            padding: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
             border: 1px solid #edf2f7;
             transition: 0.3s;
             cursor: pointer;
         }
         .product-card:hover {
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
             border-color: #facc15;
             transform: translateY(-3px);
         }
         .product-card .badge {
             background: #e53e3e;
             color: white;
-            padding: 4px 12px;
+            padding: 3px 10px;
             border-radius: 30px;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: 600;
             display: inline-block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .product-card .badge.new {
             background: #38a169;
@@ -260,32 +271,35 @@
         .product-card .badge.top {
             background: #d69e2e;
         }
+        .product-card .badge.info {
+            background: #2b6cb0;
+        }
         .product-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
         }
         .product-card .price {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: #0f172a;
-            margin: 12px 0;
+            margin: 10px 0;
         }
         .product-card .old-price {
             text-decoration: line-through;
             color: #a0aec0;
-            font-size: 1rem;
-            margin-left: 10px;
+            font-size: 0.9rem;
+            margin-left: 8px;
             font-weight: 400;
         }
         .product-card .desc {
             color: #4a5568;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
         }
         .product-card .buy-btn {
             display: inline-block;
             background: #facc15;
             color: #0f172a;
-            padding: 8px 20px;
+            padding: 6px 16px;
             border-radius: 30px;
             font-weight: 600;
             text-decoration: none;
@@ -294,7 +308,7 @@
             border: none;
             cursor: pointer;
             font-family: 'Inter', sans-serif;
-            font-size: 14px;
+            font-size: 13px;
         }
         .product-card .buy-btn:hover {
             background: #eab308;
@@ -304,43 +318,44 @@
         /* --- ОТЗЫВЫ --- */
         .reviews-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
         }
         .review-card {
             background: white;
-            padding: 25px;
-            border-radius: 16px;
+            padding: 22px;
+            border-radius: 14px;
             border: 1px solid #edf2f7;
         }
         .review-card .stars {
             color: #d69e2e;
             letter-spacing: 2px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
         .review-card .name {
             font-weight: 600;
-            margin: 10px 0 5px;
+            margin: 8px 0 4px;
         }
         .review-card .date {
             color: #a0aec0;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
         .review-card .text {
             color: #4a5568;
-            margin-top: 10px;
+            margin-top: 8px;
+            font-size: 0.95rem;
         }
 
         /* --- СТАТЬИ --- */
         .articles-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
         }
         .article-card {
             background: white;
-            padding: 25px;
-            border-radius: 16px;
+            padding: 22px;
+            border-radius: 14px;
             border: 1px solid #edf2f7;
             text-decoration: none;
             color: inherit;
@@ -350,93 +365,98 @@
         }
         .article-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
             border-color: #facc15;
         }
         .article-card .tag {
             color: #facc15;
             background: #0f172a;
-            padding: 4px 12px;
+            padding: 3px 10px;
             border-radius: 30px;
             font-weight: 600;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             display: inline-block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .article-card h4 {
-            margin: 10px 0;
+            margin: 8px 0;
+            font-size: 1.05rem;
         }
         .article-card p {
             color: #4a5568;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         /* --- FAQ --- */
         .faq-item {
             background: white;
             border-radius: 12px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             border: 1px solid #edf2f7;
         }
         .faq-item summary {
-            padding: 18px 25px;
+            padding: 16px 20px;
             font-weight: 600;
             cursor: pointer;
             list-style: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-size: 0.95rem;
         }
         .faq-item summary::-webkit-details-marker {
             display: none;
         }
         .faq-item summary::after {
             content: "+";
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #0f172a;
         }
         .faq-item[open] summary::after {
             content: "−";
         }
         .faq-item .answer {
-            padding: 0 25px 25px;
+            padding: 0 20px 20px;
             color: #4a5568;
+            font-size: 0.95rem;
         }
 
         /* --- ПОДВАЛ --- */
         .footer {
             background: #0f172a;
             color: #94a3b8;
-            padding: 40px 0;
-            margin-top: 60px;
+            padding: 30px 0;
+            margin-top: 50px;
             border-top: 1px solid #1e293b;
         }
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
         }
         .footer h4 {
             color: white;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            font-size: 1rem;
         }
         .footer a {
             color: #94a3b8;
             text-decoration: none;
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             cursor: pointer;
             transition: 0.3s;
+            font-size: 0.9rem;
         }
         .footer a:hover {
             color: #facc15;
         }
         .footer .copy {
             text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
+            margin-top: 25px;
+            padding-top: 15px;
             border-top: 1px solid #1e293b;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         /* ======= МОДАЛЬНЫЕ ОКНА ======= */
@@ -459,18 +479,18 @@
         }
         .modal-content {
             background: white;
-            padding: 40px;
+            padding: 35px;
             border-radius: 24px;
-            max-width: 400px;
+            max-width: 380px;
             width: 90%;
             position: relative;
             animation: slideIn 0.3s ease;
         }
         .modal-content .close {
             position: absolute;
-            right: 20px;
-            top: 15px;
-            font-size: 28px;
+            right: 18px;
+            top: 12px;
+            font-size: 26px;
             font-weight: 300;
             color: #94a3b8;
             cursor: pointer;
@@ -482,30 +502,31 @@
             color: #0f172a;
         }
         .modal-content h2 {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #0f172a;
+            font-size: 1.4rem;
         }
         .modal-content .subtitle {
             color: #718096;
-            margin-bottom: 25px;
-            font-size: 14px;
+            margin-bottom: 20px;
+            font-size: 13px;
         }
         .modal-content .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
         .modal-content label {
             display: block;
             font-weight: 600;
-            margin-bottom: 6px;
-            font-size: 14px;
+            margin-bottom: 4px;
+            font-size: 13px;
             color: #1a202c;
         }
         .modal-content input {
             width: 100%;
-            padding: 12px 16px;
+            padding: 10px 14px;
             border: 2px solid #e2e8f0;
             border-radius: 12px;
-            font-size: 16px;
+            font-size: 15px;
             transition: 0.3s;
             outline: none;
             font-family: 'Inter', sans-serif;
@@ -515,12 +536,12 @@
         }
         .modal-content .btn-primary {
             width: 100%;
-            padding: 14px;
+            padding: 12px;
             background: #facc15;
             color: #0f172a;
             border: none;
             border-radius: 12px;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
             cursor: pointer;
             transition: 0.3s;
@@ -532,8 +553,8 @@
         }
         .modal-content .switch-link {
             text-align: center;
-            margin-top: 18px;
-            font-size: 14px;
+            margin-top: 16px;
+            font-size: 13px;
             color: #718096;
         }
         .modal-content .switch-link a {
@@ -551,79 +572,123 @@
             to { opacity: 1; }
         }
         @keyframes slideIn {
-            from { transform: translateY(-30px); opacity: 0; }
+            from { transform: translateY(-25px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
 
-        /* --- АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ (ШАПКА СКРЫТА) --- */
+        /* --- АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ (КОМПАКТНАЯ ШАПКА) --- */
         @media (max-width: 768px) {
-            /* Скрываем шапку полностью на телефоне */
+            /* Шапка — компактная */
             .header {
-                display: none;
+                padding: 8px 0;
             }
-
-            /* Остальные элементы сайта */
-            .hero h1 {
-                font-size: 1.8rem;
+            .header-content {
+                gap: 6px;
             }
-            .hero p {
-                font-size: 1rem;
-                padding: 0 15px;
+            .logo-icon {
+                width: 34px;
+                height: 34px;
+                font-size: 18px;
             }
-            .hero .stats {
-                gap: 15px;
+            .logo-text {
+                font-size: 17px;
             }
-            .hero .stat-item strong {
-                font-size: 1.3rem;
+            .logo-slogan {
+                font-size: 9px;
             }
-            .section-title {
-                font-size: 1.4rem;
-                margin: 30px 0 20px;
+            .search-bar {
+                min-width: 100%;
+                order: 3;
             }
-            .categories-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
+            .search-bar input {
+                height: 34px;
+                font-size: 13px;
+                padding: 6px 12px;
             }
-            .category-card {
-                padding: 15px 10px;
-            }
-            .category-card .icon {
-                font-size: 2rem;
-            }
-            .category-card h3 {
-                font-size: 0.95rem;
-            }
-            .category-card p {
-                font-size: 0.8rem;
-            }
-            .products-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 15px;
-            }
-            .product-card {
-                padding: 15px;
-            }
-            .product-card h4 {
-                font-size: 1rem;
-            }
-            .product-card .price {
-                font-size: 1.1rem;
-            }
-            .product-card .buy-btn {
+            .search-bar button {
+                height: 34px;
                 font-size: 12px;
                 padding: 6px 14px;
             }
+            .user-actions {
+                gap: 8px;
+                justify-content: center;
+                order: 2;
+                margin: 2px 0;
+            }
+            .user-actions a {
+                font-size: 12px;
+                padding: 2px 6px;
+                background: rgba(255,255,255,0.06);
+                border-radius: 12px;
+            }
+
+            /* Остальные элементы */
+            .hero {
+                padding: 30px 0 35px;
+                margin: 15px 0 20px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
+                padding: 0 10px;
+            }
+            .hero .stats {
+                gap: 12px;
+            }
+            .hero .stat-item strong {
+                font-size: 1.4rem;
+            }
+            .section-title {
+                font-size: 1.4rem;
+                margin: 30px 0 18px;
+            }
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .category-card {
+                padding: 14px 8px;
+            }
+            .category-card .icon {
+                font-size: 1.8rem;
+            }
+            .category-card h3 {
+                font-size: 0.85rem;
+            }
+            .category-card p {
+                font-size: 0.7rem;
+            }
+            .products-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .product-card {
+                padding: 14px;
+            }
+            .product-card h4 {
+                font-size: 0.95rem;
+            }
+            .product-card .price {
+                font-size: 1rem;
+            }
+            .product-card .buy-btn {
+                font-size: 11px;
+                padding: 5px 12px;
+            }
             .reviews-grid {
                 grid-template-columns: 1fr;
-                gap: 15px;
+                gap: 12px;
             }
             .articles-grid {
                 grid-template-columns: 1fr;
-                gap: 15px;
+                gap: 12px;
             }
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 16px;
                 text-align: center;
             }
         }
@@ -643,13 +708,13 @@
             </a>
 
             <div class="search-bar">
-                <input type="text" placeholder="Найти стройматериалы..." id="searchInput">
+                <input type="text" placeholder="Поиск материалов..." id="searchInput">
                 <button onclick="searchProducts()">Найти</button>
             </div>
 
             <div class="user-actions">
-                <a href="#" onclick="showInfoModal('Сравнение товаров', 'Здесь вы можете сравнить цены и характеристики товаров из разных магазинов. Функция в разработке, скоро появится!')">📋 Сравнить</a>
-                <a href="#" onclick="showInfoModal('Избранное', 'Сохраняйте понравившиеся товары в избранное, чтобы не потерять их. Скоро здесь появится ваш список!')">❤️ Избранное</a>
+                <a href="#" onclick="showInfoModal('Сравнение', 'Функция сравнения товаров появится позже. Мы собираем базу данных.')">📋 Сравнить</a>
+                <a href="#" onclick="showInfoModal('Избранное', 'Сохраняйте понравившиеся товары. Скоро добавим эту функцию.')">❤️ Избранное</a>
                 <a href="#" onclick="openModal('loginModal')">👤 Войти</a>
             </div>
         </div>
@@ -658,177 +723,177 @@
     <!-- ======= ОСНОВНОЙ КОНТЕНТ ======= -->
     <main class="container">
 
-        <!-- БАННЕР -->
+        <!-- БАННЕР (реалистичный для начинающей компании) -->
         <section class="hero">
-            <h1>Молодая команда <span class="highlight">СтройСтарт</span></h1>
+            <h1>Мы запускаемся! <span class="highlight">СтройСтарт</span></h1>
             <p>
-                Мы — дружная команда энтузиастов, которая только начинает свой путь. 
-                Наша цель — помочь вам найти лучшие предложения на стройматериалы. 
-                Присоединяйтесь к нам, вместе мы строим будущее!
+                Мы — команда энтузиастов, которая создаёт каталог стройматериалов. 
+                Сейчас мы наполняем сайт информацией и договариваемся с магазинами. 
+                В ближайшее время здесь появятся актуальные цены и наличие товаров.
             </p>
             <div class="stats">
                 <div class="stat-item">
-                    <strong>150+</strong>
-                    Магазинов-партнеров
-                    <span class="small-note">и мы растем каждый день!</span>
+                    <strong>15+</strong>
+                    Магазинов на связи
+                    <span class="small-note">договариваемся о сотрудничестве</span>
                 </div>
                 <div class="stat-item">
-                    <strong>15 000+</strong>
-                    Товаров в каталоге
-                    <span class="small-note">постоянно обновляем</span>
+                    <strong>500+</strong>
+                    Товаров в работе
+                    <span class="small-note">собираем информацию</span>
                 </div>
                 <div class="stat-item">
-                    <strong>45</strong>
-                    Регионов России
-                    <span class="small-note">становимся ближе</span>
+                    <strong>5</strong>
+                    Регионов
+                    <span class="small-note">планируем расширяться</span>
                 </div>
                 <div class="stat-item">
-                    <strong>4.6</strong>
-                    Средний рейтинг
-                    <span class="small-note">первые отзывы</span>
+                    <strong>4.0</strong>
+                    Наш стартовый рейтинг
+                    <span class="small-note">будем его улучшать</span>
                 </div>
             </div>
         </section>
 
         <!-- КАТЕГОРИИ -->
-        <h2 class="section-title">Популярные категории</h2>
+        <h2 class="section-title">Категории стройматериалов</h2>
         <div class="categories-grid">
-            <a href="#" class="category-card" onclick="showInfoModal('Кирпич и блоки', 'В этой категории представлены: керамический кирпич, силикатный кирпич, газоблоки, пеноблоки, шлакоблоки. Скоро добавим подробные описания и цены!')">
+            <a href="#" class="category-card" onclick="showInfoModal('Кирпич и блоки', 'Информация собирается. Мы добавим кирпич, газоблоки, пеноблоки и другие материалы.')">
                 <div class="icon">🧱</div>
                 <h3>Кирпич и блоки</h3>
-                <p>Керамика, газоблоки, пеноблоки</p>
+                <p>Скоро появятся</p>
             </a>
-            <a href="#" class="category-card" onclick="showInfoModal('Пиломатериалы', 'В этой категории: доска обрезная, брус, вагонка, фанера, OSB, ДСП различных сортов. Подробнее скоро!')">
+            <a href="#" class="category-card" onclick="showInfoModal('Пиломатериалы', 'Информация собирается. Доска, брус, фанера, OSB — скоро всё будет.')">
                 <div class="icon">🪵</div>
                 <h3>Пиломатериалы</h3>
-                <p>Доска, брус, фанера, OSB</p>
+                <p>Скоро появятся</p>
             </a>
-            <a href="#" class="category-card" onclick="showInfoModal('Отделочные материалы', 'Краски, лаки, обои, декоративная штукатурка, напольные покрытия, плитка — всё для отделки вашего дома.')">
+            <a href="#" class="category-card" onclick="showInfoModal('Отделочные материалы', 'Краски, обои, плитка, штукатурка — собираем базу данных.')">
                 <div class="icon">🎨</div>
                 <h3>Отделочные материалы</h3>
-                <p>Краски, обои, плитка, штукатурка</p>
+                <p>Скоро появятся</p>
             </a>
-            <a href="#" class="category-card" onclick="showInfoModal('Инструменты', 'Электроинструмент, ручной инструмент, измерительные приборы, расходные материалы для любых задач.')">
+            <a href="#" class="category-card" onclick="showInfoModal('Инструменты', 'Электроинструмент, ручной инструмент — работаем над наполнением.')">
                 <div class="icon">🔧</div>
                 <h3>Инструменты</h3>
-                <p>Электро- и ручной инструмент</p>
+                <p>Скоро появятся</p>
             </a>
-            <a href="#" class="category-card" onclick="showInfoModal('Сантехника', 'Смесители, ванны, душевые кабины, унитазы, раковины, трубы, фитинги — выбирайте лучшее!')">
+            <a href="#" class="category-card" onclick="showInfoModal('Сантехника', 'Смесители, ванны, трубы — каталог в процессе наполнения.')">
                 <div class="icon">💧</div>
                 <h3>Сантехника</h3>
-                <p>Смесители, ванны, трубы</p>
+                <p>Скоро появятся</p>
             </a>
-            <a href="#" class="category-card" onclick="showInfoModal('Электротовары', 'Кабели, провода, автоматы, УЗО, розетки, выключатели, светильники для вашего дома.')">
+            <a href="#" class="category-card" onclick="showInfoModal('Электротовары', 'Кабели, розетки, автоматы — добавляем информацию.')">
                 <div class="icon">⚡</div>
                 <h3>Электротовары</h3>
-                <p>Кабели, автоматы, розетки</p>
+                <p>Скоро появятся</p>
             </a>
-            <a href="#" class="category-card" onclick="showInfoModal('Кровля и фасады', 'Металлочерепица, профнастил, сайдинг, водосточные системы, утеплители для надежной защиты.')">
+            <a href="#" class="category-card" onclick="showInfoModal('Кровля и фасады', 'Металлочерепица, сайдинг, утеплитель — каталог в разработке.')">
                 <div class="icon">🏠</div>
                 <h3>Кровля и фасады</h3>
-                <p>Металлочерепица, сайдинг, утеплитель</p>
+                <p>Скоро появятся</p>
             </a>
-            <a href="#" class="category-card" onclick="showInfoModal('Отопление', 'Радиаторы, котлы, трубы для отопления, терморегуляторы, насосы — тепло в вашем доме.')">
+            <a href="#" class="category-card" onclick="showInfoModal('Отопление', 'Радиаторы, котлы, трубы — собираем предложения.')">
                 <div class="icon">🌡️</div>
                 <h3>Отопление</h3>
-                <p>Радиаторы, котлы, трубы</p>
+                <p>Скоро появятся</p>
             </a>
         </div>
 
-        <!-- ТОВАРЫ НЕДЕЛИ -->
-        <h2 class="section-title">🔥 Популярные товары недели</h2>
+        <!-- ТОВАРЫ -->
+        <h2 class="section-title">Примеры товаров, которые мы добавляем</h2>
         <div class="products-grid">
-            <div class="product-card" onclick="showInfoModal('Кирпич керамический рядовой', 'М-125, полнотелый, 250×120×65 мм. Отличный выбор для строительства. Цена: 23 ₽/шт.')">
-                <span class="badge">ХИТ</span>
-                <h4>Кирпич керамический рядовой</h4>
-                <p class="desc">М-125, полнотелый, 250×120×65 мм</p>
-                <div class="price">23 ₽/шт <span class="old-price">31 ₽</span></div>
-                <button class="buy-btn" onclick="event.stopPropagation(); showInfoModal('Покупка', 'Для оформления заказа перейдите в корзину. Функция оплаты скоро появится!')">Купить</button>
+            <div class="product-card" onclick="showInfoModal('Кирпич керамический', 'М-125, полнотелый. Информация уточняется. Появится позже.')">
+                <span class="badge info">В работе</span>
+                <h4>Кирпич керамический</h4>
+                <p class="desc">М-125, полнотелый</p>
+                <div class="price">Скоро</div>
+                <button class="buy-btn" onclick="event.stopPropagation(); showInfoModal('Уточнение', 'Цены и наличие будут добавлены после согласования с магазинами.')">Уточнить</button>
             </div>
-            <div class="product-card" onclick="showInfoModal('Доска обрезная сосна', '40×150×6000 мм, сорт AB. Идеально для строительных работ. Цена: 1 450 ₽/шт.')">
-                <span class="badge">-25%</span>
-                <h4>Доска обрезная сосна</h4>
+            <div class="product-card" onclick="showInfoModal('Доска обрезная', '40×150×6000 мм. Сорт AB. Скоро появится.')">
+                <span class="badge info">В работе</span>
+                <h4>Доска обрезная</h4>
                 <p class="desc">40×150×6000 мм, сорт AB</p>
-                <div class="price">1 450 ₽/шт <span class="old-price">1 930 ₽</span></div>
-                <button class="buy-btn" onclick="event.stopPropagation(); showInfoModal('Покупка', 'Для оформления заказа перейдите в корзину. Функция оплаты скоро появится!')">Купить</button>
+                <div class="price">Скоро</div>
+                <button class="buy-btn" onclick="event.stopPropagation(); showInfoModal('Уточнение', 'Цены и наличие будут добавлены после согласования с магазинами.')">Уточнить</button>
             </div>
-            <div class="product-card" onclick="showInfoModal('Дрель-шуруповерт Bosch', '18V, 2 АКБ, кейс, зарядное устройство. Профессиональный инструмент. Цена: 8 990 ₽.')">
-                <span class="badge new">NEW</span>
-                <h4>Дрель-шуруповерт Bosch</h4>
-                <p class="desc">18V, 2 АКБ, кейс, зарядное</p>
-                <div class="price">8 990 ₽</div>
-                <button class="buy-btn" onclick="event.stopPropagation(); showInfoModal('Покупка', 'Для оформления заказа перейдите в корзину. Функция оплаты скоро появится!')">Купить</button>
+            <div class="product-card" onclick="showInfoModal('Дрель-шуруповерт', '18V, 2 АКБ. Информация уточняется.')">
+                <span class="badge info">В работе</span>
+                <h4>Дрель-шуруповерт</h4>
+                <p class="desc">18V, 2 АКБ, кейс</p>
+                <div class="price">Скоро</div>
+                <button class="buy-btn" onclick="event.stopPropagation(); showInfoModal('Уточнение', 'Цены и наличие будут добавлены после согласования с магазинами.')">Уточнить</button>
             </div>
-            <div class="product-card" onclick="showInfoModal('Кабель ВВГ 3×2.5', 'ГОСТ, медный, 100 метров. Надежный кабель для проводки. Цена: 2 150 ₽.')">
-                <span class="badge top">ТОП</span>
-                <h4>Кабель ВВГ 3×2.5</h4>
-                <p class="desc">ГОСТ, медный, 100 метров</p>
-                <div class="price">2 150 ₽</div>
-                <button class="buy-btn" onclick="event.stopPropagation(); showInfoModal('Покупка', 'Для оформления заказа перейдите в корзину. Функция оплаты скоро появится!')">Купить</button>
+            <div class="product-card" onclick="showInfoModal('Кабель ВВГ', '3×2.5, медный. Скоро появится.')">
+                <span class="badge info">В работе</span>
+                <h4>Кабель ВВГ</h4>
+                <p class="desc">3×2.5, медный, 100 м</p>
+                <div class="price">Скоро</div>
+                <button class="buy-btn" onclick="event.stopPropagation(); showInfoModal('Уточнение', 'Цены и наличие будут добавлены после согласования с магазинами.')">Уточнить</button>
             </div>
         </div>
 
         <!-- ОТЗЫВЫ -->
-        <h2 class="section-title">⭐ Отзывы первых покупателей</h2>
+        <h2 class="section-title">Отзывы наших первых пользователей</h2>
         <div class="reviews-grid">
             <div class="review-card">
                 <div class="stars">★★★★★</div>
                 <div class="name">Алексей Смирнов</div>
-                <div class="date">15 января 2026</div>
-                <div class="text">«Отличный старт! Нашел нужный кирпич по выгодной цене. Видно, что ребята стараются.»</div>
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <div class="name">Мария Петрова</div>
-                <div class="date">12 января 2026</div>
-                <div class="text">«Приятно удивлена каталогом. Всё понятно, цены актуальные. Успехов молодой компании!»</div>
+                <div class="date">15 августа 2026</div>
+                <div class="text">«Интересный проект! Жду, когда появятся цены. Успехов ребятам!»</div>
             </div>
             <div class="review-card">
                 <div class="stars">★★★★☆</div>
+                <div class="name">Мария Петрова</div>
+                <div class="date">12 августа 2026</div>
+                <div class="text">«Пока мало информации, но видно, что ребята стараются. Будем следить.»</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
                 <div class="name">Дмитрий Кузнецов</div>
-                <div class="date">8 января 2026</div>
-                <div class="text">«Хорошая база для начала. Ждем новых магазинов и товаров. Рекомендую!»</div>
+                <div class="date">8 августа 2026</div>
+                <div class="text">«Отличная идея — собрать всё в одном месте. Ждём наполнения каталога!»</div>
             </div>
         </div>
 
         <!-- СТАТЬИ -->
-        <h2 class="section-title">📚 Полезные статьи для начинающих</h2>
+        <h2 class="section-title">Полезные статьи (скоро)</h2>
         <div class="articles-grid">
-            <a href="#" class="article-card" onclick="showInfoModal('Как выбрать качественный кирпич', 'Разбираем виды кирпича, марки прочности, морозостойкость и на что обратить внимание новичку. Полное руководство скоро появится!')">
-                <div class="tag">Руководства</div>
-                <h4>Как выбрать качественный кирпич</h4>
-                <p>Разбираем виды, марки прочности и на что обратить внимание новичку...</p>
+            <a href="#" class="article-card" onclick="showInfoModal('Как выбрать кирпич', 'Статья в разработке. Скоро расскажем о видах кирпича, марках прочности и морозостойкости.')">
+                <div class="tag">В разработке</div>
+                <h4>Как выбрать кирпич</h4>
+                <p>Скоро появится полезное руководство...</p>
             </a>
-            <a href="#" class="article-card" onclick="showInfoModal('5 способов сэкономить на стройматериалах', 'Проверенные лайфхаки для тех, кто строит впервые и хочет уложиться в бюджет. Читайте наши советы!')">
-                <div class="tag">Советы</div>
-                <h4>5 способов сэкономить на стройматериалах</h4>
-                <p>Проверенные лайфхаки для тех, кто строит впервые и хочет уложиться в бюджет...</p>
+            <a href="#" class="article-card" onclick="showInfoModal('Экономия на стройматериалах', 'Готовим советы для тех, кто строит впервые и хочет уложиться в бюджет.')">
+                <div class="tag">В разработке</div>
+                <h4>Экономия на материалах</h4>
+                <p>Скоро появится полезное руководство...</p>
             </a>
-            <a href="#" class="article-card" onclick="showInfoModal('Топ-10 инструментов для дома', 'Что обязательно должно быть в арсенале начинающего мастера. Список с ценами и рекомендациями.')">
-                <div class="tag">Обзоры</div>
-                <h4>Топ-10 инструментов для дома</h4>
-                <p>Что обязательно должно быть в арсенале начинающего мастера...</p>
+            <a href="#" class="article-card" onclick="showInfoModal('Топ инструментов для дома', 'Собираем список того, что обязательно должно быть у каждого мастера.')">
+                <div class="tag">В разработке</div>
+                <h4>Топ инструментов</h4>
+                <p>Скоро появится полезное руководство...</p>
             </a>
         </div>
 
         <!-- FAQ -->
-        <h2 class="section-title">❓ Частые вопросы</h2>
+        <h2 class="section-title">Частые вопросы</h2>
         <div class="faq">
             <details class="faq-item">
-                <summary>Кто такие СтройСтарт?</summary>
-                <div class="answer">Мы — молодая команда энтузиастов, которая создала этот каталог, чтобы помочь людям быстро находить лучшие предложения на стройматериалы. Мы только начинаем, но уже активно растем!</div>
+                <summary>Что такое СтройСтарт?</summary>
+                <div class="answer">Мы — молодая команда, создающая каталог стройматериалов. Сейчас мы на стадии запуска: собираем информацию о магазинах, товарах и ценах.</div>
             </details>
             <details class="faq-item">
-                <summary>Можно ли купить товары напрямую через сайт?</summary>
-                <div class="answer">Наш сайт — это каталог для сравнения цен. Мы показываем лучшие предложения, а покупка происходит напрямую в магазинах-партнерах.</div>
+                <summary>Можно ли купить товары прямо сейчас?</summary>
+                <div class="answer">Пока нет. Сейчас мы наполняем каталог информацией. Как только договоримся с магазинами — добавим возможность заказа.</div>
             </details>
             <details class="faq-item">
-                <summary>Как часто обновляются цены?</summary>
-                <div class="answer">Мы стараемся обновлять информацию ежедневно. Но рекомендуем уточнять стоимость напрямую в магазине перед покупкой.</div>
+                <summary>Когда появятся цены?</summary>
+                <div class="answer">Мы работаем над этим каждый день. Планируем добавить первые цены в ближайшие недели.</div>
             </details>
             <details class="faq-item">
-                <summary>Как добавить свой магазин в каталог?</summary>
-                <div class="answer">Если вы представитель магазина стройматериалов и хотите разместить информацию в нашем каталоге, свяжитесь с нами через форму обратной связи. Размещение базовой информации бесплатно.</div>
+                <summary>Как добавить свой магазин?</summary>
+                <div class="answer">Если вы представляете магазин стройматериалов — свяжитесь с нами через форму обратной связи. Размещение бесплатно.</div>
             </details>
         </div>
 
@@ -839,35 +904,34 @@
         <div class="container footer-content">
             <div>
                 <h4>СтройСтарт</h4>
-                <a href="#" onclick="showInfoModal('О нас', 'Мы — молодая команда энтузиастов, создающая лучший каталог стройматериалов. Наша цель — сделать строительство доступным и понятным для каждого!')">О нас</a>
-                <a href="#" onclick="showInfoModal('Контакты', 'Свяжитесь с нами: 📧 info@stroystart.ru, 📞 8 (800) 555-35-35. Мы всегда на связи!')">Контакты</a>
-                <a href="#" onclick="showInfoModal('Для магазинов', 'Хотите добавить свой магазин в каталог? Напишите нам на partners@stroystart.ru. Размещение бесплатно!')">Для магазинов</a>
-                <a href="#" onclick="showInfoModal('Пользовательское соглашение', 'Используя наш сайт, вы соглашаетесь с условиями обработки данных. Подробнее в документе, который появится скоро.')">Пользовательское соглашение</a>
+                <a href="#" onclick="showInfoModal('О нас', 'Мы — команда энтузиастов, создающая удобный каталог стройматериалов. Сейчас мы на старте и активно наполняем сайт.')">О нас</a>
+                <a href="#" onclick="showInfoModal('Контакты', '📧 info@stroystart.ru, 📞 8 (800) 555-35-35. Мы всегда на связи!')">Контакты</a>
+                <a href="#" onclick="showInfoModal('Для магазинов', 'Хотите добавить свой магазин? Напишите на partners@stroystart.ru. Размещение бесплатно.')">Для магазинов</a>
             </div>
             <div>
                 <h4>Помощь</h4>
-                <a href="#" onclick="showInfoModal('Как пользоваться', 'Просто введите название товара в поиск или выберите категорию. Сравнивайте цены и переходите в магазины-партнеры.')">Как пользоваться</a>
+                <a href="#" onclick="showInfoModal('Как пользоваться', 'Просто введите запрос в поиск или выберите категорию. Пока каталог наполняется.')">Как пользоваться</a>
                 <a href="#" onclick="document.querySelector('.faq').scrollIntoView({behavior: 'smooth'})">Вопросы и ответы</a>
-                <a href="#" onclick="showInfoModal('Поддержка', 'Если у вас возникли вопросы или проблемы, напишите нам на support@stroystart.ru. Мы ответим в течение 24 часов.')">Поддержка</a>
+                <a href="#" onclick="showInfoModal('Поддержка', 'Напишите нам на support@stroystart.ru. Отвечаем в течение 24 часов.')">Поддержка</a>
             </div>
             <div>
                 <h4>Контакты</h4>
                 <a href="mailto:info@stroystart.ru">📧 info@stroystart.ru</a>
                 <a href="tel:+78005553535">📞 8 (800) 555-35-35</a>
-                <a href="#" onclick="showInfoModal('Адрес', '📍 Москва, ул. Строителей, д. 1. Офис открыт для партнеров по предварительной записи.')">📍 Москва, ул. Строителей, д. 1</a>
+                <a href="#" onclick="showInfoModal('Адрес', '📍 Москва, ул. Строителей, д. 1. Офис открыт для партнёров.')">📍 Москва, ул. Строителей, д. 1</a>
             </div>
         </div>
         <div class="container copy">
-            <p>© 2026 СтройСтарт. Молодая компания, начинаем свой путь. Все права защищены.</p>
+            <p>© 2026 СтройСтарт. Мы только начинаем. Все права защищены.</p>
         </div>
     </footer>
 
-    <!-- ======= МОДАЛЬНОЕ ОКНО ВХОДА ======= -->
+    <!-- ======= МОДАЛЬНЫЕ ОКНА ======= -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <button class="close" onclick="closeModal('loginModal')">×</button>
-            <h2>Вход в аккаунт</h2>
-            <p class="subtitle">Войдите, чтобы управлять избранным и заказами</p>
+            <h2>Вход</h2>
+            <p class="subtitle">Войдите в аккаунт, чтобы сохранять избранное</p>
             <form onsubmit="event.preventDefault(); handleLogin();">
                 <div class="form-group">
                     <label for="loginEmail">Email</label>
@@ -885,12 +949,11 @@
         </div>
     </div>
 
-    <!-- ======= МОДАЛЬНОЕ ОКНО РЕГИСТРАЦИИ ======= -->
     <div id="registerModal" class="modal">
         <div class="modal-content">
             <button class="close" onclick="closeModal('registerModal')">×</button>
             <h2>Регистрация</h2>
-            <p class="subtitle">Создайте аккаунт и начните пользоваться всеми возможностями</p>
+            <p class="subtitle">Создайте аккаунт, чтобы следить за обновлениями</p>
             <form onsubmit="event.preventDefault(); handleRegister();">
                 <div class="form-group">
                     <label for="registerName">Имя</label>
@@ -912,18 +975,17 @@
         </div>
     </div>
 
-    <!-- ======= УНИВЕРСАЛЬНОЕ МОДАЛЬНОЕ ОКНО ДЛЯ ИНФОРМАЦИИ ======= -->
     <div id="infoModal" class="modal">
         <div class="modal-content">
             <button class="close" onclick="closeModal('infoModal')">×</button>
             <h2 id="infoModalTitle">Информация</h2>
-            <p id="infoModalText" style="color: #4a5568; margin: 20px 0; line-height: 1.8;"></p>
+            <p id="infoModalText" style="color: #4a5568; margin: 15px 0; line-height: 1.7;"></p>
             <button class="btn-primary" onclick="closeModal('infoModal')">Закрыть</button>
         </div>
     </div>
 
     <script>
-        // ======= ФУНКЦИИ ДЛЯ МОДАЛЬНЫХ ОКОН =======
+        // ======= МОДАЛЬНЫЕ ОКНА =======
         function openModal(id) {
             document.getElementById(id).classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -939,24 +1001,21 @@
             openModal(to);
         }
 
-        // ======= УНИВЕРСАЛЬНОЕ ОКНО ДЛЯ ИНФОРМАЦИИ =======
         function showInfoModal(title, text) {
             document.getElementById('infoModalTitle').textContent = title;
             document.getElementById('infoModalText').textContent = text;
             openModal('infoModal');
         }
 
-        // ======= ОБРАБОТЧИКИ ФОРМ =======
+        // ======= ФОРМЫ =======
         function handleLogin() {
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
             if (email && password) {
-                alert('✅ Добро пожаловать! Вы успешно вошли в аккаунт.');
+                alert('✅ Добро пожаловать!');
                 closeModal('loginModal');
-                document.getElementById('loginEmail').value = '';
-                document.getElementById('loginPassword').value = '';
             } else {
-                alert('⚠️ Пожалуйста, заполните все поля.');
+                alert('⚠️ Заполните все поля.');
             }
         }
 
@@ -965,15 +1024,12 @@
             const email = document.getElementById('registerEmail').value;
             const password = document.getElementById('registerPassword').value;
             if (name && email && password.length >= 6) {
-                alert('🎉 Регистрация прошла успешно! Добро пожаловать в СтройСтарт!');
+                alert('🎉 Регистрация успешна!');
                 closeModal('registerModal');
-                document.getElementById('registerName').value = '';
-                document.getElementById('registerEmail').value = '';
-                document.getElementById('registerPassword').value = '';
             } else if (password.length < 6) {
-                alert('⚠️ Пароль должен содержать не менее 6 символов.');
+                alert('⚠️ Пароль должен быть не менее 6 символов.');
             } else {
-                alert('⚠️ Пожалуйста, заполните все поля.');
+                alert('⚠️ Заполните все поля.');
             }
         }
 
@@ -981,13 +1037,16 @@
         function searchProducts() {
             const query = document.getElementById('searchInput').value.trim();
             if (query) {
-                showInfoModal('Результаты поиска', `По запросу "${query}" найдено 3 товара. Мы добавим полноценный поиск в ближайшее время!`);
+                showInfoModal('Результаты поиска', `По запросу "${query}" мы пока ничего не нашли. Мы только начинаем наполнять каталог!`);
             } else {
-                alert('⚠️ Введите запрос для поиска.');
+                alert('⚠️ Введите запрос.');
             }
         }
 
-        // ======= ЗАКРЫТИЕ МОДАЛЬНЫХ ОКОН ПО КЛИКУ НА ФОН =======
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') searchProducts();
+        });
+
         document.querySelectorAll('.modal').forEach(modal => {
             modal.addEventListener('click', function(e) {
                 if (e.target === this) {
@@ -997,16 +1056,8 @@
             });
         });
 
-        // ======= ОБРАБОТКА КНОПКИ ENTER ДЛЯ ПОИСКА =======
-        document.getElementById('searchInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                searchProducts();
-            }
-        });
-
-        console.log('🚀 Сайт СтройСтарт успешно загружен!');
-        console.log('📊 Статистика: 150+ магазинов, 15 000+ товаров, 45 регионов');
-        console.log('📱 Адаптация для телефонов включена!');
+        console.log('🚀 СтройСтарт — мы запускаемся!');
+        console.log('📊 Статистика: 15+ магазинов, 500+ товаров в работе');
     </script>
 
 </body>

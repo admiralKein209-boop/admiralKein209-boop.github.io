@@ -26,7 +26,7 @@
             padding: 0 20px;
         }
 
-        /* --- ШАПКА (ДЕСКТОП) --- */
+        /* --- ШАПКА --- */
         .header {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
@@ -555,20 +555,19 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
-        /* ======= АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ (ИСПРАВЛЕННАЯ) ======= */
+        /* --- АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ (УМЕНЬШЕННАЯ ШАПКА) --- */
         @media (max-width: 768px) {
-            /* Шапка — всё вертикально, с отступами */
+            /* Шапка */
             .header-content {
                 flex-direction: column;
                 align-items: stretch;
-                gap: 8px;
+                gap: 6px;
                 padding: 8px 0;
             }
-            
-            /* Логотип — по центру, компактно */
+
+            /* Логотип */
             .logo {
                 justify-content: center;
-                gap: 8px;
                 margin-bottom: 2px;
             }
             .logo-icon {
@@ -581,37 +580,46 @@
             }
             .logo-slogan {
                 font-size: 10px;
-                text-align: center;
             }
-            
-            /* Поиск — на всю ширину */
-            .search-bar {
-                max-width: 100%;
-                margin: 4px 0;
-            }
-            .search-bar input {
-                font-size: 14px;
-                padding: 10px 14px;
-            }
-            .search-bar button {
-                padding: 10px 16px;
-                font-size: 14px;
-            }
-            
-            /* Кнопки "Сравнить", "Избранное", "Войти" — по центру, компактно */
+
+            /* Кнопки "Сравнить", "Избранное", "Войти" */
             .user-actions {
                 justify-content: center;
-                gap: 16px;
+                gap: 10px;
                 flex-wrap: wrap;
-                margin: 4px 0;
+                order: 2;
+                margin: 2px 0;
             }
             .user-actions a {
                 font-size: 13px;
-                padding: 4px 0;
+                padding: 2px 6px;
+                background: rgba(255,255,255,0.06);
+                border-radius: 16px;
                 white-space: nowrap;
             }
 
-            /* Остальные элементы сайта — адаптация */
+            /* Поиск */
+            .search-bar {
+                max-width: 100%;
+                order: 3;
+                display: flex;
+                gap: 6px;
+            }
+            .search-bar input {
+                font-size: 13px;
+                padding: 8px 12px;
+                border-radius: 20px 0 0 20px;
+                height: 38px;
+            }
+            .search-bar button {
+                font-size: 13px;
+                padding: 8px 14px;
+                border-radius: 0 20px 20px 0;
+                height: 38px;
+                white-space: nowrap;
+            }
+
+            /* Остальные элементы сайта */
             .hero h1 {
                 font-size: 1.8rem;
             }
@@ -871,4 +879,192 @@
                 <summary>Можно ли купить товары напрямую через сайт?</summary>
                 <div class="answer">Наш сайт — это каталог для сравнения цен. Мы показываем лучшие предложения, а покупка происходит напрямую в магазинах-партнерах.</div>
             </details>
-           
+            <details class="faq-item">
+                <summary>Как часто обновляются цены?</summary>
+                <div class="answer">Мы стараемся обновлять информацию ежедневно. Но рекомендуем уточнять стоимость напрямую в магазине перед покупкой.</div>
+            </details>
+            <details class="faq-item">
+                <summary>Как добавить свой магазин в каталог?</summary>
+                <div class="answer">Если вы представитель магазина стройматериалов и хотите разместить информацию в нашем каталоге, свяжитесь с нами через форму обратной связи. Размещение базовой информации бесплатно.</div>
+            </details>
+        </div>
+
+    </main>
+
+    <!-- ======= ПОДВАЛ ======= -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <h4>СтройСтарт</h4>
+                <a href="#" onclick="showInfoModal('О нас', 'Мы — молодая команда энтузиастов, создающая лучший каталог стройматериалов. Наша цель — сделать строительство доступным и понятным для каждого!')">О нас</a>
+                <a href="#" onclick="showInfoModal('Контакты', 'Свяжитесь с нами: 📧 info@stroystart.ru, 📞 8 (800) 555-35-35. Мы всегда на связи!')">Контакты</a>
+                <a href="#" onclick="showInfoModal('Для магазинов', 'Хотите добавить свой магазин в каталог? Напишите нам на partners@stroystart.ru. Размещение бесплатно!')">Для магазинов</a>
+                <a href="#" onclick="showInfoModal('Пользовательское соглашение', 'Используя наш сайт, вы соглашаетесь с условиями обработки данных. Подробнее в документе, который появится скоро.')">Пользовательское соглашение</a>
+            </div>
+            <div>
+                <h4>Помощь</h4>
+                <a href="#" onclick="showInfoModal('Как пользоваться', 'Просто введите название товара в поиск или выберите категорию. Сравнивайте цены и переходите в магазины-партнеры.')">Как пользоваться</a>
+                <a href="#" onclick="document.querySelector('.faq').scrollIntoView({behavior: 'smooth'})">Вопросы и ответы</a>
+                <a href="#" onclick="showInfoModal('Поддержка', 'Если у вас возникли вопросы или проблемы, напишите нам на support@stroystart.ru. Мы ответим в течение 24 часов.')">Поддержка</a>
+            </div>
+            <div>
+                <h4>Контакты</h4>
+                <a href="mailto:info@stroystart.ru">📧 info@stroystart.ru</a>
+                <a href="tel:+78005553535">📞 8 (800) 555-35-35</a>
+                <a href="#" onclick="showInfoModal('Адрес', '📍 Москва, ул. Строителей, д. 1. Офис открыт для партнеров по предварительной записи.')">📍 Москва, ул. Строителей, д. 1</a>
+            </div>
+        </div>
+        <div class="container copy">
+            <p>© 2026 СтройСтарт. Молодая компания, начинаем свой путь. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- ======= МОДАЛЬНОЕ ОКНО ВХОДА ======= -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <button class="close" onclick="closeModal('loginModal')">×</button>
+            <h2>Вход в аккаунт</h2>
+            <p class="subtitle">Войдите, чтобы управлять избранным и заказами</p>
+            <form onsubmit="event.preventDefault(); handleLogin();">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="example@mail.ru" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Пароль</label>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-primary">Войти</button>
+            </form>
+            <div class="switch-link">
+                Нет аккаунта? <a onclick="switchModal('loginModal', 'registerModal')">Зарегистрироваться</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======= МОДАЛЬНОЕ ОКНО РЕГИСТРАЦИИ ======= -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <button class="close" onclick="closeModal('registerModal')">×</button>
+            <h2>Регистрация</h2>
+            <p class="subtitle">Создайте аккаунт и начните пользоваться всеми возможностями</p>
+            <form onsubmit="event.preventDefault(); handleRegister();">
+                <div class="form-group">
+                    <label for="registerName">Имя</label>
+                    <input type="text" id="registerName" placeholder="Иван Иванов" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" placeholder="example@mail.ru" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Пароль</label>
+                    <input type="password" id="registerPassword" placeholder="••••••••" required minlength="6">
+                </div>
+                <button type="submit" class="btn-primary">Зарегистрироваться</button>
+            </form>
+            <div class="switch-link">
+                Уже есть аккаунт? <a onclick="switchModal('registerModal', 'loginModal')">Войти</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======= УНИВЕРСАЛЬНОЕ МОДАЛЬНОЕ ОКНО ДЛЯ ИНФОРМАЦИИ ======= -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <button class="close" onclick="closeModal('infoModal')">×</button>
+            <h2 id="infoModalTitle">Информация</h2>
+            <p id="infoModalText" style="color: #4a5568; margin: 20px 0; line-height: 1.8;"></p>
+            <button class="btn-primary" onclick="closeModal('infoModal')">Закрыть</button>
+        </div>
+    </div>
+
+    <script>
+        // ======= ФУНКЦИИ ДЛЯ МОДАЛЬНЫХ ОКОН =======
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function switchModal(from, to) {
+            closeModal(from);
+            openModal(to);
+        }
+
+        // ======= УНИВЕРСАЛЬНОЕ ОКНО ДЛЯ ИНФОРМАЦИИ =======
+        function showInfoModal(title, text) {
+            document.getElementById('infoModalTitle').textContent = title;
+            document.getElementById('infoModalText').textContent = text;
+            openModal('infoModal');
+        }
+
+        // ======= ОБРАБОТЧИКИ ФОРМ =======
+        function handleLogin() {
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            if (email && password) {
+                alert('✅ Добро пожаловать! Вы успешно вошли в аккаунт.');
+                closeModal('loginModal');
+                document.getElementById('loginEmail').value = '';
+                document.getElementById('loginPassword').value = '';
+            } else {
+                alert('⚠️ Пожалуйста, заполните все поля.');
+            }
+        }
+
+        function handleRegister() {
+            const name = document.getElementById('registerName').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            if (name && email && password.length >= 6) {
+                alert('🎉 Регистрация прошла успешно! Добро пожаловать в СтройСтарт!');
+                closeModal('registerModal');
+                document.getElementById('registerName').value = '';
+                document.getElementById('registerEmail').value = '';
+                document.getElementById('registerPassword').value = '';
+            } else if (password.length < 6) {
+                alert('⚠️ Пароль должен содержать не менее 6 символов.');
+            } else {
+                alert('⚠️ Пожалуйста, заполните все поля.');
+            }
+        }
+
+        // ======= ПОИСК =======
+        function searchProducts() {
+            const query = document.getElementById('searchInput').value.trim();
+            if (query) {
+                showInfoModal('Результаты поиска', `По запросу "${query}" найдено 3 товара. Мы добавим полноценный поиск в ближайшее время!`);
+            } else {
+                alert('⚠️ Введите запрос для поиска.');
+            }
+        }
+
+        // ======= ЗАКРЫТИЕ МОДАЛЬНЫХ ОКОН ПО КЛИКУ НА ФОН =======
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // ======= ОБРАБОТКА КНОПКИ ENTER ДЛЯ ПОИСКА =======
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchProducts();
+            }
+        });
+
+        console.log('🚀 Сайт СтройСтарт успешно загружен!');
+        console.log('📊 Статистика: 150+ магазинов, 15 000+ товаров, 45 регионов');
+        console.log('📱 Адаптация для телефонов включена!');
+    </script>
+
+</body>
+</html>

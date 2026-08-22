@@ -555,67 +555,72 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
-        /* --- АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ (УМЕНЬШЕННАЯ ШАПКА) --- */
+        /* --- АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ (МАКСИМАЛЬНО КОМПАКТНАЯ ШАПКА) --- */
         @media (max-width: 768px) {
-            /* Шапка */
+            /* Шапка — уменьшаем отступы и фон */
+            .header {
+                padding: 6px 0;
+            }
             .header-content {
                 flex-direction: column;
                 align-items: stretch;
-                gap: 6px;
-                padding: 8px 0;
+                gap: 4px;
+                padding: 4px 0;
             }
 
-            /* Логотип */
+            /* Логотип — делаем компактнее */
             .logo {
                 justify-content: center;
-                margin-bottom: 2px;
+                gap: 8px;
+                margin-bottom: 0;
             }
             .logo-icon {
-                width: 36px;
-                height: 36px;
-                font-size: 20px;
+                width: 32px;
+                height: 32px;
+                font-size: 16px;
             }
             .logo-text {
-                font-size: 18px;
+                font-size: 16px;
             }
             .logo-slogan {
-                font-size: 10px;
+                font-size: 9px;
+                margin-top: 0;
             }
 
-            /* Кнопки "Сравнить", "Избранное", "Войти" */
+            /* Кнопки "Сравнить", "Избранное", "Войти" — компактнее */
             .user-actions {
                 justify-content: center;
-                gap: 10px;
+                gap: 6px;
                 flex-wrap: wrap;
                 order: 2;
-                margin: 2px 0;
+                margin: 0;
             }
             .user-actions a {
-                font-size: 13px;
-                padding: 2px 6px;
-                background: rgba(255,255,255,0.06);
-                border-radius: 16px;
+                font-size: 12px;
+                padding: 2px 8px;
+                background: rgba(255,255,255,0.08);
+                border-radius: 14px;
                 white-space: nowrap;
             }
 
-            /* Поиск */
+            /* Поиск — уменьшаем */
             .search-bar {
                 max-width: 100%;
                 order: 3;
                 display: flex;
-                gap: 6px;
+                gap: 4px;
             }
             .search-bar input {
-                font-size: 13px;
-                padding: 8px 12px;
-                border-radius: 20px 0 0 20px;
-                height: 38px;
+                font-size: 12px;
+                padding: 6px 10px;
+                border-radius: 16px 0 0 16px;
+                height: 32px;
             }
             .search-bar button {
-                font-size: 13px;
-                padding: 8px 14px;
-                border-radius: 0 20px 20px 0;
-                height: 38px;
+                font-size: 12px;
+                padding: 6px 12px;
+                border-radius: 0 16px 16px 0;
+                height: 32px;
                 white-space: nowrap;
             }
 

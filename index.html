@@ -555,73 +555,11 @@
             to { transform: translateY(0); opacity: 1; }
         }
 
-        /* --- АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ (МАКСИМАЛЬНО КОМПАКТНАЯ ШАПКА) --- */
+        /* --- АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ (ШАПКА СКРЫТА) --- */
         @media (max-width: 768px) {
-            /* Шапка — уменьшаем отступы и фон */
+            /* Скрываем шапку полностью на телефоне */
             .header {
-                padding: 6px 0;
-            }
-            .header-content {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 4px;
-                padding: 4px 0;
-            }
-
-            /* Логотип — делаем компактнее */
-            .logo {
-                justify-content: center;
-                gap: 8px;
-                margin-bottom: 0;
-            }
-            .logo-icon {
-                width: 32px;
-                height: 32px;
-                font-size: 16px;
-            }
-            .logo-text {
-                font-size: 16px;
-            }
-            .logo-slogan {
-                font-size: 9px;
-                margin-top: 0;
-            }
-
-            /* Кнопки "Сравнить", "Избранное", "Войти" — компактнее */
-            .user-actions {
-                justify-content: center;
-                gap: 6px;
-                flex-wrap: wrap;
-                order: 2;
-                margin: 0;
-            }
-            .user-actions a {
-                font-size: 12px;
-                padding: 2px 8px;
-                background: rgba(255,255,255,0.08);
-                border-radius: 14px;
-                white-space: nowrap;
-            }
-
-            /* Поиск — уменьшаем */
-            .search-bar {
-                max-width: 100%;
-                order: 3;
-                display: flex;
-                gap: 4px;
-            }
-            .search-bar input {
-                font-size: 12px;
-                padding: 6px 10px;
-                border-radius: 16px 0 0 16px;
-                height: 32px;
-            }
-            .search-bar button {
-                font-size: 12px;
-                padding: 6px 12px;
-                border-radius: 0 16px 16px 0;
-                height: 32px;
-                white-space: nowrap;
+                display: none;
             }
 
             /* Остальные элементы сайта */

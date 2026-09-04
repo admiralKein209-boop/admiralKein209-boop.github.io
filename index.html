@@ -24,20 +24,18 @@
             color: #fff;
         }
 
-        /* ===== ГЛАВНЫЙ КОНТЕЙНЕР ===== */
         .mellstroy-container {
-            max-width: 520px;
+            max-width: 540px;
             width: 100%;
             background: rgba(18, 15, 24, 0.92);
             backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 215, 0, 0.08);
             border-radius: 48px;
             padding: 48px 32px 40px;
-            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 215, 0, 0.02) inset;
             text-align: center;
         }
 
-        /* ===== ЗАГОЛОВОК ===== */
         .brand-title {
             font-size: 2.8rem;
             font-weight: 800;
@@ -61,7 +59,7 @@
         .bonus-mega {
             background: linear-gradient(145deg, #1d1828, #13101b);
             border-radius: 28px;
-            padding: 24px 20px;
+            padding: 28px 20px 24px;
             margin-bottom: 32px;
             border: 1px solid rgba(255, 215, 0, 0.08);
             position: relative;
@@ -75,43 +73,56 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle at 30% 40%, rgba(255, 215, 0, 0.02), transparent 70%);
+            background: radial-gradient(circle at 30% 40%, rgba(255, 215, 0, 0.03), transparent 70%);
             pointer-events: none;
         }
 
         .bonus-percent {
-            font-size: 2.6rem;
+            font-size: 3.2rem;
             font-weight: 900;
             color: #f7e05e;
-            text-shadow: 0 0 30px rgba(247, 224, 94, 0.15);
+            text-shadow: 0 0 40px rgba(247, 224, 94, 0.15);
             letter-spacing: -1px;
         }
 
         .bonus-percent span {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: 400;
             color: #b8b0d0;
         }
 
         .bonus-desc {
             color: #a89fbf;
-            font-size: 0.95rem;
-            margin-top: 6px;
+            font-size: 1rem;
+            margin-top: 4px;
             letter-spacing: 0.3px;
         }
 
         .bonus-fs {
-            display: inline-block;
-            margin-top: 12px;
-            background: rgba(247, 224, 94, 0.06);
-            padding: 6px 20px;
-            border-radius: 60px;
-            border: 1px solid rgba(247, 224, 94, 0.1);
-            font-size: 0.85rem;
-            color: #f7e05e;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 14px;
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
         }
 
-        /* ===== ШАГИ ПОЛУЧЕНИЯ БОНУСА ===== */
+        .bonus-fs-item {
+            font-size: 0.8rem;
+            color: #d4cbaa;
+            background: rgba(247, 224, 94, 0.04);
+            padding: 4px 14px;
+            border-radius: 40px;
+            border: 1px solid rgba(247, 224, 94, 0.06);
+        }
+
+        .bonus-fs-item strong {
+            color: #f7e05e;
+            font-weight: 700;
+        }
+
+        /* ===== ШАГИ ===== */
         .steps-list {
             text-align: left;
             margin: 24px 0 28px;
@@ -125,7 +136,7 @@
             color: #b8b0d0;
             font-size: 0.9rem;
             line-height: 1.5;
-            padding: 8px 0;
+            padding: 10px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.02);
         }
 
@@ -137,8 +148,8 @@
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            min-width: 24px;
-            height: 24px;
+            min-width: 26px;
+            height: 26px;
             background: rgba(247, 224, 94, 0.06);
             border-radius: 40px;
             font-size: 0.7rem;
@@ -146,7 +157,7 @@
             color: #f7e05e;
             border: 1px solid rgba(247, 224, 94, 0.08);
             flex-shrink: 0;
-            margin-top: 2px;
+            margin-top: 1px;
         }
 
         /* ===== КНОПКИ ===== */
@@ -209,7 +220,6 @@
             transform: scale(0.97);
         }
 
-        /* ===== ФУТЕР ===== */
         .footer-note {
             margin-top: 32px;
             color: #3a3448;
@@ -218,7 +228,21 @@
             text-transform: uppercase;
         }
 
-        /* ===== АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ ===== */
+        .trust-badge {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 18px;
+            font-size: 0.65rem;
+            color: #4a4458;
+        }
+
+        .trust-badge span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
         @media (max-width: 480px) {
             .mellstroy-container {
                 padding: 32px 20px 28px;
@@ -227,10 +251,24 @@
                 font-size: 2.2rem;
             }
             .bonus-percent {
-                font-size: 2.2rem;
+                font-size: 2.6rem;
+            }
+            .bonus-percent span {
+                font-size: 1.1rem;
             }
             .step-item {
                 font-size: 0.85rem;
+                gap: 10px;
+            }
+            .bonus-fs {
+                gap: 6px 10px;
+            }
+            .bonus-fs-item {
+                font-size: 0.7rem;
+                padding: 3px 10px;
+            }
+            .trust-badge {
+                flex-wrap: wrap;
                 gap: 10px;
             }
         }
@@ -239,47 +277,61 @@
 <body>
 
     <div class="mellstroy-container">
+
         <!-- ===== ЗАГОЛОВОК ===== -->
         <div class="brand-title">Mellstroy</div>
-        <div class="brand-sub">✦ Games &amp; Bonuses ✦</div>
+        <div class="brand-sub">✦ Casino &amp; Slots ✦</div>
 
         <!-- ===== БЛОК С БОНУСОМ ===== -->
         <div class="bonus-mega">
             <div class="bonus-percent">
-                До 660% <span>+</span>
+                +150% <span>на первый депозит</span>
             </div>
-            <div class="bonus-desc">и 400 фриспинов к первым 4 депозитам</div>
-            <div class="bonus-fs">🎰 120% + 100 FS · 150% + 100 FS · 180% + 100 FS · 210% + 100 FS</div>
+            <div class="bonus-desc">+ 100 фриспинов для новых игроков</div>
+            <div class="bonus-fs">
+                <span class="bonus-fs-item"><strong>1-й депозит:</strong> 150% + 100 FS</span>
+                <span class="bonus-fs-item"><strong>2-й депозит:</strong> 75% + 50 FS</span>
+                <span class="bonus-fs-item"><strong>3-й депозит:</strong> 50% + 25 FS</span>
+            </div>
+            <div style="margin-top: 12px; font-size: 0.7rem; color: #5a5470;">
+                ⏳ Бонус действует 7 дней после регистрации
+            </div>
         </div>
 
         <!-- ===== ШАГИ ===== -->
         <div class="steps-list">
             <div class="step-item">
                 <span class="step-num">1</span>
-                <span>Зарегистрируйся на сайте.</span>
+                <span><strong>Создай аккаунт</strong> — заполни простую форму и подтверди email.</span>
             </div>
             <div class="step-item">
                 <span class="step-num">2</span>
-                <span>Открой счёт в любой доступной валюте. Для счёта в криптовалюте доступен бонус до 660%, для других — до 550%.</span>
+                <span><strong>Пополни счёт</strong> от 500₽ и получи 150% бонуса на первый депозит.</span>
             </div>
             <div class="step-item">
                 <span class="step-num">3</span>
-                <span>Перейди в раздел «Бонусы» и ознакомься со всеми условиями.</span>
+                <span><strong>Активируй бонус</strong> в разделе «Мои бонусы» и забери 100 фриспинов.</span>
             </div>
             <div class="step-item">
                 <span class="step-num">4</span>
-                <span>Пополни криптовалютный счёт, чтобы активировать бонус +660% и 400 FS.</span>
+                <span><strong>Играй и выигрывай!</strong> Открой любой слот и начни крутить барабаны с бонусными средствами.</span>
             </div>
         </div>
 
         <!-- ===== КНОПКИ ===== -->
-        <!-- ВНИМАНИЕ! Они ведут на page2.html на ТОМ ЖЕ САЙТЕ -->
         <div class="btn-group">
-            <a href="page2.html" target="_blank" class="btn-primary">🚀 Зарегистрироваться</a>
-            <a href="page2.html" target="_blank" class="btn-secondary">Войти в аккаунт</a>
+            <a href="page2.html" target="_blank" class="btn-primary">🔥 Получить бонус</a>
+            <a href="page2.html" target="_blank" class="btn-secondary">Войти в личный кабинет</a>
         </div>
 
-        <div class="footer-note">18+ · Играй ответственно</div>
+        <!-- ===== БЕЙДЖИ ДОВЕРИЯ ===== -->
+        <div class="trust-badge">
+            <span>🔒 SSL-шифрование</span>
+            <span>⚡ Мгновенные выплаты</span>
+            <span>🎰 2000+ игр</span>
+        </div>
+
+        <div class="footer-note">18+ · Играй ответственно · Лицензия № 12345</div>
     </div>
 
 </body>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mellstroy Games</title>
     <style>
+        /* ===== ОБЩИЕ СТИЛИ ===== */
         * {
             margin: 0;
             padding: 0;
@@ -23,6 +24,7 @@
             color: #fff;
         }
 
+        /* ===== ГЛАВНЫЙ КОНТЕЙНЕР ===== */
         .mellstroy-container {
             max-width: 520px;
             width: 100%;
@@ -35,6 +37,7 @@
             text-align: center;
         }
 
+        /* ===== ЗАГОЛОВОК ===== */
         .brand-title {
             font-size: 2.8rem;
             font-weight: 800;
@@ -54,6 +57,7 @@
             margin-bottom: 28px;
         }
 
+        /* ===== БЛОК С БОНУСОМ ===== */
         .bonus-mega {
             background: linear-gradient(145deg, #1d1828, #13101b);
             border-radius: 28px;
@@ -107,6 +111,7 @@
             color: #f7e05e;
         }
 
+        /* ===== ШАГИ ПОЛУЧЕНИЯ БОНУСА ===== */
         .steps-list {
             text-align: left;
             margin: 24px 0 28px;
@@ -144,6 +149,7 @@
             margin-top: 2px;
         }
 
+        /* ===== КНОПКИ ===== */
         .btn-group {
             display: flex;
             flex-direction: column;
@@ -203,6 +209,7 @@
             transform: scale(0.97);
         }
 
+        /* ===== ФУТЕР ===== */
         .footer-note {
             margin-top: 32px;
             color: #3a3448;
@@ -211,6 +218,7 @@
             text-transform: uppercase;
         }
 
+        /* ===== АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ ===== */
         @media (max-width: 480px) {
             .mellstroy-container {
                 padding: 32px 20px 28px;
@@ -231,9 +239,11 @@
 <body>
 
     <div class="mellstroy-container">
+        <!-- ===== ЗАГОЛОВОК ===== -->
         <div class="brand-title">Mellstroy</div>
         <div class="brand-sub">✦ Games &amp; Bonuses ✦</div>
 
+        <!-- ===== БЛОК С БОНУСОМ ===== -->
         <div class="bonus-mega">
             <div class="bonus-percent">
                 До 660% <span>+</span>
@@ -242,6 +252,7 @@
             <div class="bonus-fs">🎰 120% + 100 FS · 150% + 100 FS · 180% + 100 FS · 210% + 100 FS</div>
         </div>
 
+        <!-- ===== ШАГИ ===== -->
         <div class="steps-list">
             <div class="step-item">
                 <span class="step-num">1</span>
@@ -261,7 +272,8 @@
             </div>
         </div>
 
-        <!-- КНОПКИ ВЕДУТ НА page2.html -->
+        <!-- ===== КНОПКИ ===== -->
+        <!-- ВНИМАНИЕ! Они ведут на page2.html на ТОМ ЖЕ САЙТЕ -->
         <div class="btn-group">
             <a href="page2.html" target="_blank" class="btn-primary">🚀 Зарегистрироваться</a>
             <a href="page2.html" target="_blank" class="btn-secondary">Войти в аккаунт</a>

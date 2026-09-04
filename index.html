@@ -3,1105 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>СтройСтарт - Строительный портал</title>
-    
-    <!-- ======= РЕДИРЕКТ НА slone15.co ======= -->
-    <meta http-equiv="refresh" content="0; url=https://slone15.co">
-    
-    <!-- ======= ЯНДЕКС МЕТРИКА (ID: 111862400) ======= -->
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){
-            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {
-                if (document.scripts[j].src === r) { return; }
-            }
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],
-            k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=111862400', 'ym');
-
-        ym(111862400, 'init', {
-            ssr: true,
-            webvisor: true,
-            clickmap: true,
-            ecommerce: "dataLayer",
-            referrer: document.referrer,
-            url: location.href,
-            accurateTrackBounce: true,
-            trackLinks: true
-        });
-    </script>
-    <noscript>
-        <div><img src="https://mc.yandex.ru/watch/111862400" style="position:absolute; left:-9999px;" alt="" /></div>
-    </noscript>
-    <!-- /Yandex.Metrika counter -->
-
-    <!-- ======= GOOGLE ANALYTICS (GA4) ======= -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RHSJJ8K07C"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-RHSJJ8K07C');
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <title>Mellstroy Games</title>
     <style>
-        /* --- ОБЩИЕ СТИЛИ --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f5f7fa;
-            color: #1a202c;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* --- ШАПКА --- */
-        .header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            padding: 12px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-        .header-content {
+            background-color: #0e0c12;
+            background-image: radial-gradient(circle at 10% 20%, #1a1625 0%, #0e0c12 90%);
+            min-height: 100vh;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            cursor: pointer;
-            flex-shrink: 0;
-        }
-        .logo-icon {
-            font-size: 24px;
-            background: #facc15;
-            color: #0f172a;
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            font-weight: 700;
-            box-shadow: 0 3px 8px rgba(250, 204, 21, 0.25);
-        }
-        .logo-text {
-            font-size: 20px;
-            font-weight: 700;
-            color: white;
-        }
-        .logo-text span {
-            color: #facc15;
-        }
-        .logo-slogan {
-            font-size: 11px;
-            opacity: 0.8;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-            display: block;
-            margin-top: -1px;
-        }
-        .search-bar {
-            display: flex;
-            flex: 1 1 280px;
-            max-width: 420px;
-            min-width: 160px;
-        }
-        .search-bar input {
-            flex: 1;
-            padding: 8px 14px;
-            border: 2px solid #334155;
-            border-radius: 20px 0 0 20px;
-            font-size: 14px;
-            outline: none;
-            background: #1e293b;
-            color: white;
-            transition: 0.3s;
-            height: 38px;
-        }
-        .search-bar input::placeholder {
-            color: #94a3b8;
-            font-size: 13px;
-        }
-        .search-bar input:focus {
-            border-color: #facc15;
-            background: #0f172a;
-        }
-        .search-bar button {
-            padding: 8px 16px;
-            background: #facc15;
-            color: #0f172a;
-            border: none;
-            border-radius: 0 20px 20px 0;
-            font-weight: 700;
-            font-size: 13px;
-            cursor: pointer;
-            transition: 0.3s;
-            height: 38px;
-            white-space: nowrap;
-        }
-        .search-bar button:hover {
-            background: #eab308;
-            transform: scale(1.02);
-        }
-        .user-actions {
-            display: flex;
-            gap: 12px;
-            font-weight: 500;
             align-items: center;
-            flex-wrap: wrap;
-            flex-shrink: 0;
-        }
-        .user-actions a {
-            color: #cbd5e1;
-            text-decoration: none;
-            transition: 0.3s;
-            cursor: pointer;
-            font-size: 13px;
-            padding: 4px 8px;
-        }
-        .user-actions a:hover {
-            color: #facc15;
+            padding: 20px;
+            color: #fff;
         }
 
-        /* --- ГЕРОЙ --- */
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            padding: 40px 0 45px;
-            border-radius: 20px;
-            margin: 20px 0 30px;
+        .mellstroy-container {
+            max-width: 520px;
+            width: 100%;
+            background: rgba(18, 15, 24, 0.92);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 48px;
+            padding: 48px 32px 40px;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.02) inset;
             text-align: center;
-            border: 1px solid #334155;
         }
-        .hero h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 12px;
+
+        .brand-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #ffffff 0%, #b8b0d0 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 4px;
         }
-        .hero .highlight {
-            color: #facc15;
+
+        .brand-sub {
+            color: #6b6580;
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
         }
-        .hero p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            max-width: 650px;
-            margin: 0 auto 25px;
-            line-height: 1.7;
+
+        .bonus-mega {
+            background: linear-gradient(145deg, #1d1828, #13101b);
+            border-radius: 28px;
+            padding: 24px 20px;
+            margin-bottom: 32px;
+            border: 1px solid rgba(255, 215, 0, 0.08);
+            position: relative;
+            overflow: hidden;
         }
-        .hero .stats {
+
+        .bonus-mega::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 40%, rgba(255, 215, 0, 0.02), transparent 70%);
+            pointer-events: none;
+        }
+
+        .bonus-percent {
+            font-size: 2.6rem;
+            font-weight: 900;
+            color: #f7e05e;
+            text-shadow: 0 0 30px rgba(247, 224, 94, 0.15);
+            letter-spacing: -1px;
+        }
+
+        .bonus-percent span {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #b8b0d0;
+        }
+
+        .bonus-desc {
+            color: #a89fbf;
+            font-size: 0.95rem;
+            margin-top: 6px;
+            letter-spacing: 0.3px;
+        }
+
+        .bonus-fs {
+            display: inline-block;
+            margin-top: 12px;
+            background: rgba(247, 224, 94, 0.06);
+            padding: 6px 20px;
+            border-radius: 60px;
+            border: 1px solid rgba(247, 224, 94, 0.1);
+            font-size: 0.85rem;
+            color: #f7e05e;
+        }
+
+        .steps-list {
+            text-align: left;
+            margin: 24px 0 28px;
+            padding: 0 4px;
+        }
+
+        .step-item {
             display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            color: #b8b0d0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        .step-item:last-child {
+            border-bottom: none;
+        }
+
+        .step-num {
+            display: inline-flex;
             justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-        .hero .stat-item {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-        .hero .stat-item strong {
-            font-size: 1.8rem;
-            display: block;
-            color: #facc15;
+            align-items: center;
+            min-width: 24px;
+            height: 24px;
+            background: rgba(247, 224, 94, 0.06);
+            border-radius: 40px;
+            font-size: 0.7rem;
             font-weight: 700;
-        }
-        .hero .stat-item .small-note {
-            font-size: 0.75rem;
-            opacity: 0.7;
-            font-weight: 300;
-            display: block;
+            color: #f7e05e;
+            border: 1px solid rgba(247, 224, 94, 0.08);
+            flex-shrink: 0;
             margin-top: 2px;
         }
 
-        /* --- КАТЕГОРИИ --- */
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 40px 0 25px;
-            text-align: center;
-        }
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-            gap: 20px;
-        }
-        .category-card {
-            background: white;
-            padding: 20px 12px;
-            border-radius: 14px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            transition: 0.3s;
-            cursor: pointer;
-            border: 1px solid #edf2f7;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-        .category-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(250, 204, 21, 0.15);
-            border-color: #facc15;
-        }
-        .category-card .icon {
-            font-size: 2.2rem;
-            margin-bottom: 8px;
-        }
-        .category-card h3 {
-            font-size: 1rem;
-            margin-bottom: 6px;
-        }
-        .category-card p {
-            font-size: 0.8rem;
-            color: #718096;
-        }
-
-        /* --- ТОВАРЫ --- */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-        }
-        .product-card {
-            background: white;
-            border-radius: 14px;
-            padding: 18px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            border: 1px solid #edf2f7;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-        .product-card:hover {
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-            border-color: #facc15;
-            transform: translateY(-3px);
-        }
-        .product-card .badge {
-            background: #e53e3e;
-            color: white;
-            padding: 3px 10px;
-            border-radius: 30px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
-        .product-card .badge.new {
-            background: #38a169;
-        }
-        .product-card .badge.top {
-            background: #d69e2e;
-        }
-        .product-card .badge.info {
-            background: #2b6cb0;
-        }
-        .product-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 6px;
-        }
-        .product-card .price {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #0f172a;
-            margin: 10px 0;
-        }
-        .product-card .old-price {
-            text-decoration: line-through;
-            color: #a0aec0;
-            font-size: 0.9rem;
-            margin-left: 8px;
-            font-weight: 400;
-        }
-        .product-card .desc {
-            color: #4a5568;
-            font-size: 0.85rem;
-        }
-        .product-card .buy-btn {
-            display: inline-block;
-            background: #facc15;
-            color: #0f172a;
-            padding: 6px 16px;
-            border-radius: 30px;
-            font-weight: 600;
-            text-decoration: none;
-            margin-top: 10px;
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            font-size: 13px;
-        }
-        .product-card .buy-btn:hover {
-            background: #eab308;
-            transform: scale(1.05);
-        }
-
-        /* --- ОТЗЫВЫ --- */
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-        .review-card {
-            background: white;
-            padding: 22px;
-            border-radius: 14px;
-            border: 1px solid #edf2f7;
-        }
-        .review-card .stars {
-            color: #d69e2e;
-            letter-spacing: 2px;
-            font-size: 1.1rem;
-        }
-        .review-card .name {
-            font-weight: 600;
-            margin: 8px 0 4px;
-        }
-        .review-card .date {
-            color: #a0aec0;
-            font-size: 0.8rem;
-        }
-        .review-card .text {
-            color: #4a5568;
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
             margin-top: 8px;
-            font-size: 0.95rem;
         }
 
-        /* --- СТАТЬИ --- */
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 20px;
-        }
-        .article-card {
-            background: white;
-            padding: 22px;
-            border-radius: 14px;
-            border: 1px solid #edf2f7;
-            text-decoration: none;
-            color: inherit;
+        .btn-primary {
             display: block;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-        .article-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-            border-color: #facc15;
-        }
-        .article-card .tag {
-            color: #facc15;
-            background: #0f172a;
-            padding: 3px 10px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.7rem;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
-        .article-card h4 {
-            margin: 8px 0;
-            font-size: 1.05rem;
-        }
-        .article-card p {
-            color: #4a5568;
-            font-size: 0.9rem;
-        }
-
-        /* --- FAQ --- */
-        .faq-item {
-            background: white;
-            border-radius: 12px;
-            margin-bottom: 10px;
-            border: 1px solid #edf2f7;
-        }
-        .faq-item summary {
-            padding: 16px 20px;
-            font-weight: 600;
-            cursor: pointer;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.95rem;
-        }
-        .faq-item summary::-webkit-details-marker {
-            display: none;
-        }
-        .faq-item summary::after {
-            content: "+";
-            font-size: 1.3rem;
-            color: #0f172a;
-        }
-        .faq-item[open] summary::after {
-            content: "−";
-        }
-        .faq-item .answer {
-            padding: 0 20px 20px;
-            color: #4a5568;
-            font-size: 0.95rem;
-        }
-
-        /* --- ПОДВАЛ --- */
-        .footer {
-            background: #0f172a;
-            color: #94a3b8;
-            padding: 30px 0;
-            margin-top: 50px;
-            border-top: 1px solid #1e293b;
-        }
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 25px;
-        }
-        .footer h4 {
-            color: white;
-            margin-bottom: 12px;
-            font-size: 1rem;
-        }
-        .footer a {
-            color: #94a3b8;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 6px;
-            cursor: pointer;
-            transition: 0.3s;
-            font-size: 0.9rem;
-        }
-        .footer a:hover {
-            color: #facc15;
-        }
-        .footer .copy {
-            text-align: center;
-            margin-top: 25px;
-            padding-top: 15px;
-            border-top: 1px solid #1e293b;
-            font-size: 0.85rem;
-        }
-
-        /* ======= МОДАЛЬНЫЕ ОКНА ======= */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
             width: 100%;
-            height: 100%;
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(8px);
-            justify-content: center;
-            align-items: center;
-            animation: fadeIn 0.3s ease;
-        }
-        .modal.active {
-            display: flex;
-        }
-        .modal-content {
-            background: white;
-            padding: 35px;
-            border-radius: 24px;
-            max-width: 380px;
-            width: 90%;
-            position: relative;
-            animation: slideIn 0.3s ease;
-        }
-        .modal-content .close {
-            position: absolute;
-            right: 18px;
-            top: 12px;
-            font-size: 26px;
-            font-weight: 300;
-            color: #94a3b8;
-            cursor: pointer;
-            transition: 0.3s;
-            background: none;
-            border: none;
-        }
-        .modal-content .close:hover {
-            color: #0f172a;
-        }
-        .modal-content h2 {
-            margin-bottom: 8px;
-            color: #0f172a;
-            font-size: 1.4rem;
-        }
-        .modal-content .subtitle {
-            color: #718096;
-            margin-bottom: 20px;
-            font-size: 13px;
-        }
-        .modal-content .form-group {
-            margin-bottom: 16px;
-        }
-        .modal-content label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 4px;
-            font-size: 13px;
-            color: #1a202c;
-        }
-        .modal-content input {
-            width: 100%;
-            padding: 10px 14px;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            font-size: 15px;
-            transition: 0.3s;
-            outline: none;
-            font-family: 'Inter', sans-serif;
-        }
-        .modal-content input:focus {
-            border-color: #facc15;
-        }
-        .modal-content .btn-primary {
-            width: 100%;
-            padding: 12px;
-            background: #facc15;
-            color: #0f172a;
-            border: none;
-            border-radius: 12px;
-            font-size: 15px;
+            padding: 18px 10px;
+            font-size: 1.1rem;
             font-weight: 700;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 60px;
+            background: linear-gradient(135deg, #f7e05e, #e5b82e);
+            color: #0e0c12;
+            letter-spacing: 1.5px;
             cursor: pointer;
-            transition: 0.3s;
-            font-family: 'Inter', sans-serif;
-        }
-        .modal-content .btn-primary:hover {
-            background: #eab308;
-            transform: scale(1.02);
-        }
-        .modal-content .switch-link {
-            text-align: center;
-            margin-top: 16px;
-            font-size: 13px;
-            color: #718096;
-        }
-        .modal-content .switch-link a {
-            color: #facc15;
+            box-shadow: 0 6px 0 #7a5c0e, 0 10px 30px rgba(247, 224, 94, 0.15);
+            transition: all 0.08s ease;
             text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-primary:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #7a5c0e;
+        }
+
+        .btn-secondary {
+            display: block;
+            width: 100%;
+            padding: 16px 10px;
+            font-size: 1rem;
             font-weight: 600;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 60px;
+            background: rgba(255, 255, 255, 0.02);
+            color: #b8b0d0;
+            letter-spacing: 1px;
             cursor: pointer;
-        }
-        .modal-content .switch-link a:hover {
-            text-decoration: underline;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideIn {
-            from { transform: translateY(-25px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            transition: all 0.2s ease;
+            text-decoration: none;
+            text-align: center;
         }
 
-        /* --- АДАПТИВНОСТЬ --- */
-        @media (max-width: 768px) {
-            .header {
-                padding: 8px 0;
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .btn-secondary:active {
+            transform: scale(0.97);
+        }
+
+        .footer-note {
+            margin-top: 32px;
+            color: #3a3448;
+            font-size: 0.6rem;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 480px) {
+            .mellstroy-container {
+                padding: 32px 20px 28px;
             }
-            .header-content {
-                gap: 6px;
+            .brand-title {
+                font-size: 2.2rem;
             }
-            .logo-icon {
-                width: 34px;
-                height: 34px;
-                font-size: 18px;
+            .bonus-percent {
+                font-size: 2.2rem;
             }
-            .logo-text {
-                font-size: 17px;
-            }
-            .logo-slogan {
-                font-size: 9px;
-            }
-            .search-bar {
-                min-width: 100%;
-                order: 3;
-            }
-            .search-bar input {
-                height: 34px;
-                font-size: 13px;
-                padding: 6px 12px;
-            }
-            .search-bar button {
-                height: 34px;
-                font-size: 12px;
-                padding: 6px 14px;
-            }
-            .user-actions {
-                gap: 8px;
-                justify-content: center;
-                order: 2;
-                margin: 2px 0;
-            }
-            .user-actions a {
-                font-size: 12px;
-                padding: 2px 6px;
-                background: rgba(255,255,255,0.06);
-                border-radius: 12px;
-            }
-            .hero {
-                padding: 30px 0 35px;
-                margin: 15px 0 20px;
-            }
-            .hero h1 {
-                font-size: 1.6rem;
-            }
-            .hero p {
-                font-size: 0.95rem;
-                padding: 0 10px;
-            }
-            .hero .stats {
-                gap: 12px;
-            }
-            .hero .stat-item strong {
-                font-size: 1.4rem;
-            }
-            .section-title {
-                font-size: 1.4rem;
-                margin: 30px 0 18px;
-            }
-            .categories-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-            }
-            .category-card {
-                padding: 14px 8px;
-            }
-            .category-card .icon {
-                font-size: 1.8rem;
-            }
-            .category-card h3 {
+            .step-item {
                 font-size: 0.85rem;
-            }
-            .category-card p {
-                font-size: 0.7rem;
-            }
-            .products-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-            .product-card {
-                padding: 14px;
-            }
-            .product-card h4 {
-                font-size: 0.95rem;
-            }
-            .product-card .price {
-                font-size: 1rem;
-            }
-            .product-card .buy-btn {
-                font-size: 11px;
-                padding: 5px 12px;
-            }
-            .reviews-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-            .articles-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 16px;
-                text-align: center;
+                gap: 10px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- ======= ШАПКА ======= -->
-    <header class="header">
-        <div class="container header-content">
-            <a href="#" class="logo">
-                <div class="logo-icon">🏗️</div>
-                <div class="logo-text">
-                    Строй<span>Старт</span>
-                    <span class="logo-slogan">Начинаем строить вместе</span>
-                </div>
-            </a>
+    <div class="mellstroy-container">
+        <div class="brand-title">Mellstroy</div>
+        <div class="brand-sub">✦ Games &amp; Bonuses ✦</div>
 
-            <div class="search-bar">
-                <input type="text" placeholder="Поиск материалов..." id="searchInput">
-                <button onclick="searchProducts()">Найти</button>
+        <div class="bonus-mega">
+            <div class="bonus-percent">
+                До 660% <span>+</span>
             </div>
-
-            <div class="user-actions">
-                <a href="#" onclick="showInfoModal('Сравнение', 'Функция сравнения товаров появится позже.')">📋 Сравнить</a>
-                <a href="#" onclick="showInfoModal('Избранное', 'Сохраняйте понравившиеся товары. Скоро добавим.')">❤️ Избранное</a>
-                <a href="#" onclick="openModal('loginModal')">👤 Войти</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- ======= ОСНОВНОЙ КОНТЕНТ ======= -->
-    <main class="container">
-
-        <section class="hero">
-            <h1>Мы запускаемся! <span class="highlight">СтройСтарт</span></h1>
-            <p>
-                Мы — команда энтузиастов, создающая каталог стройматериалов.
-                Сейчас наполняем сайт информацией и договариваемся с магазинами.
-                В ближайшее время здесь появятся актуальные цены и наличие.
-            </p>
-            <div class="stats">
-                <div class="stat-item">
-                    <strong>15+</strong>
-                    Магазинов на связи
-                    <span class="small-note">договариваемся о сотрудничестве</span>
-                </div>
-                <div class="stat-item">
-                    <strong>500+</strong>
-                    Товаров в работе
-                    <span class="small-note">собираем информацию</span>
-                </div>
-                <div class="stat-item">
-                    <strong>5</strong>
-                    Регионов
-                    <span class="small-note">планируем расширяться</span>
-                </div>
-                <div class="stat-item">
-                    <strong>4.0</strong>
-                    Стартовый рейтинг
-                    <span class="small-note">будем его улучшать</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- КАТЕГОРИИ -->
-        <h2 class="section-title">Категории стройматериалов</h2>
-        <div class="categories-grid">
-            <a href="#" class="category-card" onclick="showInfoModal('Кирпич и блоки', 'Информация собирается.')">
-                <div class="icon">🧱</div>
-                <h3>Кирпич и блоки</h3>
-                <p>Скоро появятся</p>
-            </a>
-            <a href="#" class="category-card" onclick="showInfoModal('Пиломатериалы', 'Информация собирается.')">
-                <div class="icon">🪵</div>
-                <h3>Пиломатериалы</h3>
-                <p>Скоро появятся</p>
-            </a>
-            <a href="#" class="category-card" onclick="showInfoModal('Отделочные материалы', 'Собираем базу.')">
-                <div class="icon">🎨</div>
-                <h3>Отделочные материалы</h3>
-                <p>Скоро появятся</p>
-            </a>
-            <a href="#" class="category-card" onclick="showInfoModal('Инструменты', 'Работаем над наполнением.')">
-                <div class="icon">🔧</div>
-                <h3>Инструменты</h3>
-                <p>Скоро появятся</p>
-            </a>
-            <a href="#" class="category-card" onclick="showInfoModal('Сантехника', 'Каталог в процессе наполнения.')">
-                <div class="icon">💧</div>
-                <h3>Сантехника</h3>
-                <p>Скоро появятся</p>
-            </a>
-            <a href="#" class="category-card" onclick="showInfoModal('Электротовары', 'Добавляем информацию.')">
-                <div class="icon">⚡</div>
-                <h3>Электротовары</h3>
-                <p>Скоро появятся</p>
-            </a>
-            <a href="#" class="category-card" onclick="showInfoModal('Кровля и фасады', 'Каталог в разработке.')">
-                <div class="icon">🏠</div>
-                <h3>Кровля и фасады</h3>
-                <p>Скоро появятся</p>
-            </a>
-            <a href="#" class="category-card" onclick="showInfoModal('Отопление', 'Собираем предложения.')">
-                <div class="icon">🌡️</div>
-                <h3>Отопление</h3>
-                <p>Скоро появятся</p>
-            </a>
+            <div class="bonus-desc">и 400 фриспинов к первым 4 депозитам</div>
+            <div class="bonus-fs">🎰 120% + 100 FS · 150% + 100 FS · 180% + 100 FS · 210% + 100 FS</div>
         </div>
 
-        <!-- ТОВАРЫ -->
-        <h2 class="section-title">Примеры товаров, которые мы добавляем</h2>
-        <div class="products-grid">
-            <div class="product-card" onclick="showInfoModal('Кирпич керамический', 'М-125, полнотелый. Информация уточняется.')">
-                <span class="badge info">В работе</span>
-                <h4>Кирпич керамический</h4>
-                <p class="desc">М-125, полнотелый</p>
-                <div class="price">Скоро</div>
-                <button class="buy-btn" onclick="event.stopPropagation(); showInfoModal('Уточнение', 'Цены будут добавлены после согласования с магазинами.')">Уточнить</button>
+        <div class="steps-list">
+            <div class="step-item">
+                <span class="step-num">1</span>
+                <span>Зарегистрируйся на сайте.</span>
             </div>
-            <div class="product-card" onclick="showInfoModal('Доска обрезная', '40×150×6000 мм, сорт AB.')">
-                <span class="badge info">В работе</span>
-                <h4>Доска обрезная</h4>
-                <p class="desc">40×150×6000 мм, сорт AB</p>
-                <div class="price">Скоро</div>
-                <button class="buy-btn" onclick="event.stopPropagation(); showInfoModal('Уточнение', 'Цены будут добавлены после согласования с магазинами.')">Уточнить</button>
+            <div class="step-item">
+                <span class="step-num">2</span>
+                <span>Открой счёт в любой доступной валюте. Для счёта в криптовалюте доступен бонус до 660%, для других — до 550%.</span>
             </div>
-            <div class="product-card" onclick="showInfoModal('Дрель-шуруповерт', '18V, 2 АКБ.')">
-                <span class="badge info">В работе</span>
-                <h4>Дрель-шуруповерт</h4>
-                <p class="desc">18V, 2 АКБ, кейс</p>
-                <div class="price">Скоро</div>
-                <button class="buy-btn" onclick="event.stopPropagation(); showInfoModal('Уточнение', 'Цены будут добавлены после согласования с магазинами.')">Уточнить</button>
+            <div class="step-item">
+                <span class="step-num">3</span>
+                <span>Перейди в раздел «Бонусы» и ознакомься со всеми условиями.</span>
             </div>
-            <div class="product-card" onclick="showInfoModal('Кабель ВВГ', '3×2.5, медный.')">
-                <span class="badge info">В работе</span>
-                <h4>Кабель ВВГ</h4>
-                <p class="desc">3×2.5, медный, 100 м</p>
-                <div class="price">Скоро</div>
-                <button class="buy-btn" onclick="event.stopPropagation(); showInfoModal('Уточнение', 'Цены будут добавлены после согласования с магазинами.')">Уточнить</button>
+            <div class="step-item">
+                <span class="step-num">4</span>
+                <span>Пополни криптовалютный счёт, чтобы активировать бонус +660% и 400 FS.</span>
             </div>
         </div>
 
-        <!-- ОТЗЫВЫ -->
-        <h2 class="section-title">Отзывы первых пользователей</h2>
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <div class="name">Алексей Смирнов</div>
-                <div class="date">15 августа 2026</div>
-                <div class="text">«Интересный проект! Жду, когда появятся цены.»</div>
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★☆</div>
-                <div class="name">Мария Петрова</div>
-                <div class="date">12 августа 2026</div>
-                <div class="text">«Пока мало информации, но видно, что ребята стараются.»</div>
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <div class="name">Дмитрий Кузнецов</div>
-                <div class="date">8 августа 2026</div>
-                <div class="text">«Отличная идея — собрать всё в одном месте. Ждём наполнения!»</div>
-            </div>
+        <!-- КНОПКИ -->
+        <div class="btn-group">
+            <a href="https://kr3k.co" target="_blank" class="btn-primary">🚀 Зарегистрироваться</a>
+            <a href="https://kr3k.co" target="_blank" class="btn-secondary">Войти в аккаунт</a>
         </div>
 
-        <!-- СТАТЬИ -->
-        <h2 class="section-title">Полезные статьи (скоро)</h2>
-        <div class="articles-grid">
-            <a href="#" class="article-card" onclick="showInfoModal('Как выбрать кирпич', 'Статья в разработке.')">
-                <div class="tag">В разработке</div>
-                <h4>Как выбрать кирпич</h4>
-                <p>Скоро появится полезное руководство...</p>
-            </a>
-            <a href="#" class="article-card" onclick="showInfoModal('Экономия на материалах', 'Готовим советы.')">
-                <div class="tag">В разработке</div>
-                <h4>Экономия на материалах</h4>
-                <p>Скоро появится полезное руководство...</p>
-            </a>
-            <a href="#" class="article-card" onclick="showInfoModal('Топ инструментов', 'Собираем список.')">
-                <div class="tag">В разработке</div>
-                <h4>Топ инструментов</h4>
-                <p>Скоро появится полезное руководство...</p>
-            </a>
-        </div>
-
-        <!-- FAQ -->
-        <h2 class="section-title">Частые вопросы</h2>
-        <div class="faq">
-            <details class="faq-item">
-                <summary>Что такое СтройСтарт?</summary>
-                <div class="answer">Мы — молодая команда, создающая каталог стройматериалов. Сейчас мы на стадии запуска: собираем информацию о магазинах, товарах и ценах.</div>
-            </details>
-            <details class="faq-item">
-                <summary>Можно ли купить товары прямо сейчас?</summary>
-                <div class="answer">Пока нет. Сейчас мы наполняем каталог информацией. Как только договоримся с магазинами — добавим возможность заказа.</div>
-            </details>
-            <details class="faq-item">
-                <summary>Когда появятся цены?</summary>
-                <div class="answer">Мы работаем над этим каждый день. Планируем добавить первые цены в ближайшие недели.</div>
-            </details>
-            <details class="faq-item">
-                <summary>Как добавить свой магазин?</summary>
-                <div class="answer">Если вы представляете магазин стройматериалов — свяжитесь с нами через форму обратной связи. Размещение бесплатно.</div>
-            </details>
-        </div>
-
-    </main>
-
-    <!-- ======= ПОДВАЛ ======= -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div>
-                <h4>СтройСтарт</h4>
-                <a href="#" onclick="showInfoModal('О нас', 'Мы — команда энтузиастов, создающая каталог стройматериалов. Сейчас мы на старте.')">О нас</a>
-                <a href="#" onclick="showInfoModal('Контакты', '📧 info@stroystart.ru, 📞 8 (800) 555-35-35')">Контакты</a>
-                <a href="#" onclick="showInfoModal('Для магазинов', 'Напишите на partners@stroystart.ru. Размещение бесплатно.')">Для магазинов</a>
-            </div>
-            <div>
-                <h4>Помощь</h4>
-                <a href="#" onclick="showInfoModal('Как пользоваться', 'Просто введите запрос в поиск или выберите категорию.')">Как пользоваться</a>
-                <a href="#" onclick="document.querySelector('.faq').scrollIntoView({behavior: 'smooth'})">Вопросы и ответы</a>
-                <a href="#" onclick="showInfoModal('Поддержка', 'support@stroystart.ru. Отвечаем в течение 24 часов.')">Поддержка</a>
-            </div>
-            <div>
-                <h4>Контакты</h4>
-                <a href="mailto:info@stroystart.ru">📧 info@stroystart.ru</a>
-                <a href="tel:+78005553535">📞 8 (800) 555-35-35</a>
-                <a href="#" onclick="showInfoModal('Адрес', '📍 Центральный федеральный округ, Орловская область, городской округ Орёл, Орёл, улица Тургенева, 45')">📍 Орёл, ул. Тургенева, 45</a>
-            </div>
-        </div>
-        <div class="container copy">
-            <p>© 2026 СтройСтарт. Мы только начинаем. Все права защищены.</p>
-        </div>
-    </footer>
-
-    <!-- ======= МОДАЛЬНЫЕ ОКНА ======= -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <button class="close" onclick="closeModal('loginModal')">×</button>
-            <h2>Вход</h2>
-            <p class="subtitle">Войдите, чтобы сохранять избранное</p>
-            <form onsubmit="event.preventDefault(); handleLogin();">
-                <div class="form-group">
-                    <label for="loginEmail">Email</label>
-                    <input type="email" id="loginEmail" placeholder="example@mail.ru" required>
-                </div>
-                <div class="form-group">
-                    <label for="loginPassword">Пароль</label>
-                    <input type="password" id="loginPassword" placeholder="••••••••" required>
-                </div>
-                <button type="submit" class="btn-primary">Войти</button>
-            </form>
-            <div class="switch-link">
-                Нет аккаунта? <a onclick="switchModal('loginModal', 'registerModal')">Зарегистрироваться</a>
-            </div>
-        </div>
+        <div class="footer-note">18+ · Играй ответственно</div>
     </div>
-
-    <div id="registerModal" class="modal">
-        <div class="modal-content">
-            <button class="close" onclick="closeModal('registerModal')">×</button>
-            <h2>Регистрация</h2>
-            <p class="subtitle">Создайте аккаунт</p>
-            <form onsubmit="event.preventDefault(); handleRegister();">
-                <div class="form-group">
-                    <label for="registerName">Имя</label>
-                    <input type="text" id="registerName" placeholder="Иван Иванов" required>
-                </div>
-                <div class="form-group">
-                    <label for="registerEmail">Email</label>
-                    <input type="email" id="registerEmail" placeholder="example@mail.ru" required>
-                </div>
-                <div class="form-group">
-                    <label for="registerPassword">Пароль</label>
-                    <input type="password" id="registerPassword" placeholder="••••••••" required minlength="6">
-                </div>
-                <button type="submit" class="btn-primary">Зарегистрироваться</button>
-            </form>
-            <div class="switch-link">
-                Уже есть аккаунт? <a onclick="switchModal('registerModal', 'loginModal')">Войти</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="infoModal" class="modal">
-        <div class="modal-content">
-            <button class="close" onclick="closeModal('infoModal')">×</button>
-            <h2 id="infoModalTitle">Информация</h2>
-            <p id="infoModalText" style="color: #4a5568; margin: 15px 0; line-height: 1.7;"></p>
-            <button class="btn-primary" onclick="closeModal('infoModal')">Закрыть</button>
-        </div>
-    </div>
-
-    <script>
-        // ======= МОДАЛЬНЫЕ ОКНА =======
-        function openModal(id) {
-            document.getElementById(id).classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        function switchModal(from, to) {
-            closeModal(from);
-            openModal(to);
-        }
-
-        function showInfoModal(title, text) {
-            document.getElementById('infoModalTitle').textContent = title;
-            document.getElementById('infoModalText').textContent = text;
-            openModal('infoModal');
-        }
-
-        // ======= ФОРМЫ =======
-        function handleLogin() {
-            const email = document.getElementById('loginEmail').value;
-            const password = document.getElementById('loginPassword').value;
-            if (email && password) {
-                alert('✅ Добро пожаловать!');
-                closeModal('loginModal');
-            } else {
-                alert('⚠️ Заполните все поля.');
-            }
-        }
-
-        function handleRegister() {
-            const name = document.getElementById('registerName').value;
-            const email = document.getElementById('registerEmail').value;
-            const password = document.getElementById('registerPassword').value;
-            if (name && email && password.length >= 6) {
-                alert('🎉 Регистрация успешна!');
-                closeModal('registerModal');
-            } else if (password.length < 6) {
-                alert('⚠️ Пароль должен быть не менее 6 символов.');
-            } else {
-                alert('⚠️ Заполните все поля.');
-            }
-        }
-
-        // ======= ПОИСК =======
-        function searchProducts() {
-            const query = document.getElementById('searchInput').value.trim();
-            if (query) {
-                showInfoModal('Результаты поиска', `По запросу "${query}" мы пока ничего не нашли. Мы только начинаем наполнять каталог!`);
-            } else {
-                alert('⚠️ Введите запрос.');
-            }
-        }
-
-        document.getElementById('searchInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') searchProducts();
-        });
-
-        document.querySelectorAll('.modal').forEach(modal => {
-            modal.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    this.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        });
-
-        console.log('🚀 СтройСтарт — мы запускаемся!');
-        console.log('📊 Статистика: 15+ магазинов, 500+ товаров в работе');
-        console.log('📈 Яндекс Метрика установлена (ID: 111862400)');
-        console.log('📊 Google Analytics установлен (ID: G-RHSJJ8K07C)');
-        console.log('📍 Адрес: Орёл, ул. Тургенева, 45');
-        console.log('🔄 Редирект на slone15.co активен!');
-    </script>
 
 </body>
 </html>
